@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.ui.view" id="view_car_situation_wizard_form">
+        <field name="name">car.situation.wizard.form</field>
+        <field name="model">car.situation.wizard</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div class="oe_title">
+                        <h1 class="d-flex">
+                            The New Car Situation
+                            <field name="situation" widget="priority" class="mx-auto"/>
+                        </h1>
+                    </div>
+                </sheet>
+                <footer>
+                    <button name="action_situation" type="object" string="Save" class="oe_highlight"/>
+                    <button name="Cancel"  string="Cancel" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+    <record id="action_car_situation_wizard" model="ir.actions.act_window">
+        <field name="name">Car Situation</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">car.situation.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="view_car_situation_wizard_form"/>
+        <field name="target">new</field>
+        <field name="context">{'active_id': active_id}</field>
+    </record>
+
+
+</odoo>

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.ui.view" id="view_car_model_form">
+        <field name="name">car.model.form</field>
+        <field name="model">car.model</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <field name="state" widget="statusbar"
+                           options="{'clickable':1}"/>
+                </header>
+                <sheet>
+                    <widget name="web_ribbon" title="Archived" bg_color="bg-danger"
+                            attrs="{'invisible': [('active', '=', True)]}"/>
+                    <div class="oe_titel">
+                        <h1>
+                            <field name="ref" readonly="1"/>
+                        </h1>
+                    </div>
+                    <group  style="margin-top: 25px">
+                        <group string="The Model">
+                            <field name="brand_id" options="{'no_create': True}"/>
+                            <field name="name"/>
+                            <field name="nbr"/>
+                            <field name="date" widget="selection"/>
+                        </group>
+                        <group>
+                            <field name="brand_image" widget="image"
+                                   style="max-width: 100px; max-height: 100px;  margin-left:100px"/>
+                        </group>
+                        <group string="Model Information">
+                            <field name="seats"/>
+                            <field name="doors"/>
+                        </group>
+                        <notebook>
+                            <page string="More Info">
+                                <group>
+                                    <field name="power" />
+                                    <field name="horsepower" />
+                                    <field name="horsepower_tax" />
+                                    <field name="electric_assistance"/>
+                                </group>
+                            </page>
+                            <page string="Notes">
+                                <group>
+                                    <field name="notes"/>
+                                </group>
+                            </page>
+                        </notebook>
+                        <field name="active" invisible="1"/>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" groups="base.group_user"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_car_model_tree">
+        <field name="name">car.model.tree</field>
+        <field name="model">car.model</field>
+        <field name="arch" type="xml">
+            <tree decoration-success="state == 'production'"
+                       decoration-warning="state == 'prototype'"
+                       decoration-primary="state == 'concept'"
+                       decoration-info="state == 'discontinued'">
+                <field name="nbr"/>
+                <field name="brand_id"/>
+                <field name="name"/>
+                <field name="state"
+                       decoration-success="state == 'production'"
+                       decoration-warning="state == 'prototype' "
+                       decoration-primary="state == 'concept' "
+                       decoration-info="state == 'discontinued' "
+                       widget="badge"/>
+                <field name="date"/>
+
+
+
+            </tree>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="view_car_model_search">
+        <field name="name">car.model.search</field>
+        <field name="model">car.model</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name" filter_domain="['|', ('name', 'ilike', self), ('ref','ilike', self)]"/>
+                <field name="date"/>
+                <field name="brand_id"/>
+
+                <filter name="filter_concept" string="In Conception" domain="[('state', '=', 'concept')]"/>
+                <filter name="filter_prototype" string="Prototype" domain="[('state', '=', 'prototype')]"/>
+                <filter name="filter_production" string="In Production" domain="[('state', '=', 'production')]"/>
+                <filter name="filter_discontinued" string="Discontinued" domain="[('state', '=', 'discontinued')]"/>
+                <separator/>
+                <filter name="achived" string="Archived" domain="[('active', '=', False)]"/>
+                <separator/>
+                <group expand="0" string="Group By">
+                    <filter name="group_gender" string="Brand" context="{'group_by':'brand_id'}"/>
+                </group>
+
+            </search>
+        </field>
+    </record>
+
+    <record id="action_car_model" model="ir.actions.act_window">
+        <field name="name">Model</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">car.model</field>
+        <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="car_agency.view_car_model_search"/>
+    </record>
+
+   <menuitem
+            id="menu_model"
+            name="Model"
+            parent="menu_cars_group"
+            action="action_car_model"
+            sequence="10"
+    />
+
+</odoo>

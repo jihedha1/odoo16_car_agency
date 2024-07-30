@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template id="weblearns_layout">
+        <t t-if="not o" t-set="o" t-value="doc"/>
+        <t t-if="not company">
+            <t t-if="company_id">
+                <t t-set="company" t-value="company_id"/>
+            </t>
+            <t t-elif="o and 'company_id' in o and o.company_id.sudo()">
+                <t t-set="company" t-value="o.company_id.sudo()"/>
+            </t>
+            <t t-else="else">
+                <t t-set="company" t-value="res_company"/>
+            </t>
+        </t>
+        <div class="header">
+            <div class="text-center" style="report_header_style;border-bottom: 1px solid black;">
+                <div class="row">
+                    <div class="col-3 mb4">
+                        <img alt="img" t-if="company.logo" t-att-src="image_data_uri(company.logo)"
+                             style="max-height:90px"/>
+                    </div>
+                    <div class="col-3 text-center">
+                        <strong>
+                            Car Rental Agreement
+                        </strong>
+                        <p>Car Agency Management System.</p>
+                    </div>
+                    <div class="col-6" style="text-align: right;">
+                        <span t-if="company.company_details" t-field="company.company_details"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="article o_report_layout_standard">
+            <t t-out="0"/>
+        </div>
+        <div class="footer">
+            <div class="row text-center" style="border-top: 1px solid black;">
+                <div class="col-4">
+                    <span t-field="company.email"/>
+                </div>
+                <div class="col-4">
+                    <span t-field="company.phone"/>
+                    <br/>
+                    <span t-field="company.mobile"/>
+                </div>
+                <div class="col-4">
+                    <span t-field="company.website"/>
+                </div>
+            </div>
+            <br/>
+            <div class="row text-center">
+                <p>Page :<span class="page"/>/
+                    <span class="topage"/>
+                </p>
+            </div>
+            <div style="text-align: right; ">
+                <p t-esc="context_timestamp(datetime.datetime.now()).strftime('%d-%m-%Y') +'    '+ context_timestamp(datetime.datetime.now()).strftime(' | %H:%M')"
+                   style="font-size: 14px"/>
+            </div>
+        </div>
+
+    </template>
+    <template id="report_rent_template">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="rent">
+                <t t-call="car_agency.weblearns_layout">
+                    <div class="page">
+                        <div class="row">
+                            <div class="col-6 text-center " style="border-bottom:1px solid black; ">
+                                <img t-if="rent.client_image"
+                                     style="max-width: 200px; max-height: 200px; border-radius: 15px 50px 30px; "
+                                     t-att-src="image_data_uri(rent.client_image)"/>
+                                <h4 t-field="rent.client_id.name" style="margin-bottom:15px;"/>
+                            </div>
+                            <div class="col-6 text-center " style="border-bottom:1px solid black; ">
+                                <img t-if="rent.agency_image"
+                                     style="max-width: 200px; max-height: 200px; border-radius: 15px 50px 30px; "
+                                     t-att-src="image_data_uri(rent.agency_image)"/>
+                                <h4 t-field="rent.agency_id.name" style="margin-bottom:15px;"/>
+                            </div>
+                        </div>
+                        <div class="row" style="margin-top:10px ">
+                            <div class="col-3 text-centre">
+                                <strong>Client Reference:</strong>
+                                <p t-field="rent.client_id.id"/>
+                            </div>
+                            <div class="col-9">
+                                <strong>Agency ID:</strong>
+                                <p t-out="rent.agency_id.ref or 'Not Available.'"/>
+                            </div>
+                        </div>
+                        <div class="row" style="margin-top:10px ; border-bottom:1px solid black; padding-bottom:10px;">
+                            <div class="col-6">
+                                <strong>The Car:</strong>
+                                <p t-field="rent.car_id"/>
+                            </div>
+                            <div class="col-6 text-center">
+                                <strong>Registration Number:</strong>
+                                <p t-out="rent.registration_number or 'Empty.'"/>
+                            </div>
+                        </div>
+                        <div class="row" style="margin-top:10px ; border-bottom:1px solid black;padding-bottom:10px;">
+                            <div class="col-4">
+                                <strong>Contract Start Date:</strong>
+                                <div>
+                                    <t t-esc="rent.start_date"/>
+                                </div>
+                            </div>
+                            <div class="col-4 text-center">
+                                <strong>Contract End Date:</strong>
+                                <div>
+                                    <t t-esc="rent.finish_date"/>
+                                </div>
+                            </div>
+                            <div class="col-4 text-center">
+                                <strong>Number Of The Days:</strong>
+                                <div>
+                                    <t t-esc="rent.nb_day"/>
+                                </div>
+                            </div>
+                        </div>
+                        <br/>
+                        <strong>
+                            Price :
+                        </strong>
+                        <div class="row" style="margin-top:10px ; border-bottom:1px solid black;padding-bottom:10px;">
+                            <div class="col-6">
+                                <strong>Rent Price For One Day:</strong>
+                                <div>
+                                    <t t-esc="rent.rent_price"/>
+                                </div>
+                            </div>
+                            <div class="col-6 text-left">
+                                <strong>Total:</strong>
+                                <div>
+                                    <t t-esc="rent.total"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="nb-section">
+                            <h5>NB:</h5>
+                            <p>
+                                This rental contract is subject to the terms and conditions agreed upon by the client
+                                and the agency. Please ensure that you have read and understood all the clauses before
+                                signing. Any damage to the car must be reported immediately to the agency. The client is
+                                responsible for maintaining the car in good condition throughout the rental period.
+                            </p>
+                            <br/>
+                            <p>
+                                For further assistance or queries, contact our support team .
+                            </p>
+                            <br/>
+                            <br/>
+                            <div class="row">
+                                <div class="col-6 text-center">
+                                    <p>
+                                        Client Signature:
+                                    </p>
+                                    ______________________________
+                                </div>
+                                <div class="col-6 text-center">
+                                    <p>
+                                        Agency Representative Signature:
+                                    </p>
+                                    ______________________________
+                                </div>
+                            </div>
+                        </div>
+                        <br/>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+    <record id="report_rent" model="ir.actions.report">
+        <field name="name">Rent Agreement</field>
+        <field name="model">car.rental</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">car_agency.report_rent_template</field>
+        <field name="report_file">car_agency.report_rent_template</field>
+        <field name="binding_model_id" ref="model_car_rental"/>
+        <field name="binding_type">report</field>
+    </record>
+
+</odoo>

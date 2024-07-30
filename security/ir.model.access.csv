@@ -1,0 +1,15 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+car_agency.access_car_brand,access_car_brand,car_agency.model_car_brand,base.group_user,1,1,1,1
+car_agency.access_car_model,access_car_model,car_agency.model_car_model,base.group_user,1,1,1,1
+car_agency.access_company_car,access_company_car,car_agency.model_company_car,base.group_user,1,1,1,1
+car_agency.access_company_agency,access_company_agency,car_agency.model_company_agency,base.group_user,1,1,1,1
+car_agency.access_car_sale,access_car_sale,car_agency.model_car_sale,base.group_user,1,1,1,1
+car_agency.access_car_sale_wizard,access_car_sale_wizard,car_agency.model_car_sale_wizard,base.group_user,1,1,1,1
+car_agency.access_car_rental,access_car_rental,car_agency.model_car_rental,base.group_user,1,1,1,1
+car_agency.access_car_rental_wizard,access_car_rental_wizard,car_agency.model_car_rental_wizard,base.group_user,1,1,1,1
+car_agency.access_return_car,access_return_car,car_agency.model_return_car,base.group_user,1,1,1,1
+car_agency.access_car_services,access_car_services,car_agency.model_car_services,base.group_user,1,1,1,1
+car_agency.access_car_damage,access_car_damage,car_agency.model_car_damage,base.group_user,1,1,1,1
+car_agency.access_car_maintenance,access_car_maintenance,car_agency.model_car_maintenance,base.group_user,1,1,1,1
+car_agency.access_car_repair_wizard,access_car_repair_wizard,car_agency.model_car_repair_wizard,base.group_user,1,1,1,1
+car_agency.access_car_situation_wizard,access_car_situation_wizard,car_agency.model_car_situation_wizard,base.group_user,1,1,1,1

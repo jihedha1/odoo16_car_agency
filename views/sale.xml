@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.ui.view" id="view_car_sale_form">
+        <field name="name">car.sale.form</field>
+        <field name="model">car.sale</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_signe" states="draft" type="object" string="Signe Contract"
+                            class="oe_highlight"/>
+                    <button name="action_sign_and_print" states="draft" type="object" string="Signe Contract and Print"
+                            class="oe_highlight"/>
+                    <button name="action_cancel" states="draft,in_progress" type="object" string="Cancel"/>
+                    <button name="action_draft" states="cancelled" type="object" string="Reset To Draft"/>
+                    <button name="action_return" states="done" type="object" string="Reset To Draft"
+                            class="oe_highlight"/>
+                    <field name="state" widget="statusbar"
+                           options="{'clickable':0}"/>
+                </header>
+                <sheet>
+                    <widget name="web_ribbon" title="Sold" bg_color="bg-success"
+                            attrs="{'invisible': [('state', '!=', 'done')]}"/>
+                    <div class="oe_titel">
+                        <h1>
+                            <field name="ref" readonly="1"/>
+                        </h1>
+                    </div>
+                    <div class="row">
+                        <div class="col-6">
+                            <field name="agency_image" widget="image" nolabel="1"
+                                   style="max-width: 150px; max-height: 150px;"/>
+                        </div>
+                        <div class="col-6 text-center">
+                            <field name="client_image" widget="image" nolabel="1"
+                                   style="max-width: 200px; max-height: 200px;"/>
+                        </div>
+                    </div>
+                    <group string="The Agency" style="margin-top: 15px">
+                        <group>
+                            <field name="agency_id" options="{'no_create': True}"/>
+                            <field name="responsible" widget="many2one_avatar_user"/>
+                        </group>
+                    </group>
+                    <group string="The Client" style="margin-top: 15px">
+                        <group>
+                            <field name="client_id" widget="res_partner_many2one"/>
+                        </group>
+                    </group>
+                    <separator/>
+                    <group style="margin-top: 15px">
+                        <group string="The Car">
+                            <field name="car_id" options="{'no_create': True}"/>
+                            <field name="registration_number"/>
+                            <field name="date"/>
+                        </group>
+                        <group>
+                            <field name="brand_image" widget="image"
+                                   style="max-width: 100px; max-height: 100px;  margin-left:100px;margin-top:50px;"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group string="Price">
+                            <field name="currency_id" invisible="1"/>
+                            <field name="sale_price" widget="monetary" options="{'currency_field': 'currency_id'}" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                            <field name="percentage_of_increase"
+                                   attrs="{'invisible': [('pay_mode', '=', 'full_payment')]}" />
+                            <field name="advance_installment" attrs="{'invisible': [('pay_mode', '=', 'full_payment')], 'readonly': [('state', '!=', 'draft')]}"
+                                   widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                            <field name="monthly_installment" attrs="{'invisible': [('pay_mode', '=', 'full_payment')], 'readonly': [('state', '!=', 'draft')]}"
+                                   widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                        </group>
+                        <group string="Payment">
+                            <field name="payment_method" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                            <field name="pay_mode" widget="radio" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                            <field name="nbr_years" attrs="{'invisible': [('pay_mode', '=', 'full_payment')], 'readonly': [('state', '!=', 'draft')]}"/>
+                            <field name="percentage_advanced"
+                                   attrs="{'invisible': [('pay_mode', '=', 'full_payment')], 'readonly': [('state', '!=', 'draft')]}"/>
+                        </group>
+                    </group>
+                    <separator string="Terms and Conditions"/>
+                    <field name="notes" nolabel="1"
+                           placeholder="Write here all other information relative to this contract"/>
+                    <field name="active" invisible="1"/>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" groups="base.group_user"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_car_sale_tree">
+        <field name="name">car.sale.tree</field>
+        <field name="model">car.sale</field>
+        <field name="arch" type="xml">
+            <tree decoration-success="state == 'done'"
+                  decoration-primary="state == 'draft'"
+                  decoration-info="state == 'in_progress'"
+                  decoration-danger="state == 'cancelled'">
+                <field name="agency_id"/>
+                <field name="client_id" widget="many2one_avatar"/>
+                <field name="car_id"/>
+                <field name="currency_id" invisible="1"/>
+                <field name="sale_price" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                <field name="state"
+                       decoration-success="state == 'done'"
+                       decoration-primary="state == 'draft'"
+                       decoration-info="state == 'in_progress'"
+                       decoration-danger="state == 'cancelled'"
+                       widget="badge"/>
+                <field name="date"/>
+            </tree>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="view_car_sale_search">
+        <field name="name">car.sale.search</field>
+        <field name="model">car.sale</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="agency_id"/>
+                <field name="car_id"/>
+                <field name="client_id"/>
+                <field name="date"/>
+                <separator/>
+                <filter name="filter_draft" string="Draft" domain="[('state', '=', 'draft')]"/>
+                <filter name="filter_done" string="Done" domain="[('state', '=', 'done')]"/>
+                <filter name="filter_in_progress" string="In Progress" domain="[('state', '=', 'in_progress')]"/>
+                <filter name="filter_cancelled" string="Cancelled" domain="[('state', '=', 'Cancelled')]"/>
+                <filter name="filter_damaged" string="Damaged" domain="[('state', '=', 'damaged')]"/>
+                <separator/>
+                <filter name="achived" string="Archived" domain="[('active', '=', False)]"/>
+                <separator/>
+                <group expand="0" string="Group By">
+                    <filter name="group_gender" string="Agency" context="{'group_by':'agency_id'}"/>
+                    <filter name="group_gender1" string="Client" context="{'group_by':'client_id'}"/>
+                    <filter name="group_gender2" string="Car" context="{'group_by':'car_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_car_sale" model="ir.actions.act_window">
+        <field name="name">Car Sale</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">car.sale</field>
+        <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="car_agency.view_car_sale_search"/>
+    </record>
+
+    <menuitem
+            id="menu_car_sale"
+            name="Sale"
+            parent="menu_management"
+            action="action_car_sale"
+            sequence="1"
+    />
+
+</odoo>

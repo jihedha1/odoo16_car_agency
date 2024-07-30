@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="res_config_settings_view_form_car" model="ir.ui.view">
+            <field name="name">res.config.settings.view.car</field>
+            <field name="model">res.config.settings</field>
+            <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[hasclass('settings')]" position="inside">
+                    <div class="app_settings_block" data-string="Car Agency" id="car_agency" string="Car Agency"
+                         data-key="car_agency">
+                        <h2>Car Agency Management</h2>
+                        <div class="row mt16 o_settings_container" id="car_agency_setting">
+                            <div class="col-12 o_setting_box">
+                                <div class="o_setting_left_pane"/>
+                                <div class="o_setting_right_pane">
+                                    <label for="car_agency_notes" string="Terms and Conditions"/>
+                                    <field name="car_agency_notes"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="car_agency_config_settings_action" model="ir.actions.act_window">
+            <field name="name">Settings</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.config.settings</field>
+            <field name="view_mode">form</field>
+            <field name="target">inline</field>
+            <field name="context">{'module': 'car_agency', 'bin_size': False}</field>
+        </record>
+
+        <menuitem id="car_agency_config_settings_menu"
+                  name="Settings"
+                  parent="menu_car"
+                  sequence="0"
+                  action="car_agency_config_settings_action"/>
+    </data>
+</odoo>

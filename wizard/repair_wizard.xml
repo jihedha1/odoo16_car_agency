@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.ui.view" id="view_car_repair_wizard_form">
+        <field name="name">car.rental.repair.form</field>
+        <field name="model">car.repair.wizard</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <div class="oe_titel">
+                            <h1>
+                                <field name="ref" readonly="1"/>
+                            </h1>
+                        </div>
+                    </group>
+                        <group string="Maintenance Information">
+                            <field name="car_situation" readonly="1"/>
+                            <field name="reason" attrs="{'readonly': [('car_situation','=','damaged')]}"/>
+                            <field name="damage_ids"
+                                   attrs="{'invisible': [('reason', 'not in', ['damaged'])],'readonly': [('car_situation','=','damaged')]}"
+                                   widget="many2many_tags"
+                                   options="{'no_create': True}" />
+                            <field name="services_ids"
+                                   widget="many2many_tags"
+                                   attrs="{'readonly': [('car_situation','=','damaged')]}"
+                                   options="{'no_create': True}" />
+                            <div class="oe_inline o_td_label">
+                                <label for="costs"/>
+                            </div>
+                            <field name="costs" widget="monetary" options="{'currency_field': 'currency_id'}"
+                                   class="oe_subtotal_footer_separator"
+                                   nolabel="1"/>
+                        </group>
+                        <group string="Maintenance Days">
+                            <label for="start_date" string="Date"/>
+                            <div name="dates" class="o_row">
+                                <field name="start_date" widget="daterange"
+                                       options='{"related_end_date": "finish_date"}'
+                                       />
+                                <i class="fa fa-long-arrow-right mx-2 oe_edit_only" aria-label="Arrow icon"
+                                   title="Arrow"/>
+                                <i class="fa fa-long-arrow-right mx-2 oe_read_only" aria-label="Arrow icon"
+                                   title="Arrow"
+                                   attrs="{'invisible': [('start_date', '=', False), ('finish_date', '=', False)]}"/>
+                                <field name="finish_date" widget="daterange"
+                                       options='{"related_start_date": "start_date"}'
+                                />
+                            </div>
+                            <field name="nb_day" readonly="1"/>
+                        </group>
+                        <group string="The Worker">
+                        <field name="repairman_id" />
+                        <field name="phone" widget="phone"/>
+                        <field name="email" widget="email"/>
+                    </group>
+                    <separator string="Terms and Conditions"/>
+                    <field name="notes" nolabel="1"
+                           placeholder="Write here all other information relative to this contract"/>
+                    <field name="active" invisible="1"/>
+                </sheet>
+                <footer>
+                    <button name="action_create_maintenance" type="object" string="Save" class="oe_highlight"/>
+                    <button name="Cancel"  string="Cancel" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+    <record id="action_car_repair_wizard" model="ir.actions.act_window">
+        <field name="name">Car Repair</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">car.repair.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="view_car_repair_wizard_form"/>
+        <field name="target">new</field>
+        <field name="context">{'active_id': active_id}</field>
+    </record>
+</odoo>

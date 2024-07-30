@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.ui.view" id="view_car_damage_tree">
+        <field name="name">car.damage.tree</field>
+        <field name="model">car.damage</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom">
+                <field name="id"/>
+                <field name="name"/>
+                <field name="services_ids" widget="many2many_tags"/>
+                <field name="currency_id" invisible="1"/>
+                <field name="cost" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+            </tree>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="view_car_damage_search">
+        <field name="name">car.damage.search</field>
+        <field name="model">car.damage</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="id"/>
+                <field name="name"/>
+                <field name="services_ids"/>
+                <separator/>
+                <filter name="achived" string="Archived" domain="[('active', '=', False)]"/>
+                <separator/>
+                <group expand="0" string="Group By">
+                    <filter name="group_gender" string="Services" context="{'group_by':'services_ids'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_car_damage" model="ir.actions.act_window">
+        <field name="name">Car Damage</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">car.damage</field>
+        <field name="view_mode">tree</field>
+        <field name="search_view_id" ref="car_agency.view_car_damage_search"/>
+    </record>
+
+    <menuitem
+            id="menu_car_damage"
+            name="Types"
+            parent="menu_services_group"
+            action="action_car_damage"
+            sequence="1"
+    />
+
+</odoo>

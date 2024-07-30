@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.ui.view" id="view_car_brand_form">
+        <field name="name">car.brand.form</field>
+        <field name="model">car.brand</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                    </div>
+                    <widget name="web_ribbon" title="Archived" bg_color="bg-danger"
+                            attrs="{'invisible': [('active', '=', True)]}"/>
+                    <div class="oe_titel">
+                        <h1>
+                            <field name="ref" readonly="1"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="brand_image" widget="image"
+                                   style="max-width: 200px; max-height: 200px;  margin-left:100px"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group string="Brand Information">
+                            <field name="active" invisible="1"/>
+                            <field name="name"/>
+                            <field name="nbr"/>
+                        </group>
+                        <group string="Contact">
+                            <field name="phone" widget="phone"/>
+                            <field name="email" widget="email"/>
+                            <field name="website" widget="url"/>
+                        </group>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" groups="base.group_user"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="car_brand_kanban_view">
+        <field name="name">car.brand.kanban.view</field>
+        <field name="model">car.brand</field>
+        <field name="arch" type="xml">
+            <kanban>
+                <field name="name"/>
+                <field name="brand_image"/>
+                <field name="ref"/>
+                <field name="nbr"/>
+                <field name="id"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click o_kanban_record_has_image_file d-flex align-items-center">
+                            <!-- Image container -->
+                            <div class="oe_module_vignette mr-3 ">
+                                <img t-att-src="kanban_image('car.brand', 'brand_image', record.id.raw_value)"
+                                     style="max-width: 100px; max-height: 100px;  " t-att-alt="record.name.raw_value"/>
+                            </div>
+                            <!-- Text container -->
+                            <div class="oe_kanban_details" style="margin-left:10px;">
+                                <strong>
+                                    <span t-esc="record.name.raw_value"/>
+                                </strong>
+                                <ul>
+                                    <li>Reference:
+                                        <span t-esc="record.ref.raw_value"/>
+                                    </li>
+                                    <li>ID:
+                                        <span t-esc="record.nbr.raw_value"/>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </t>
+
+                </templates>
+            </kanban>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="view_car_brand_tree">
+        <field name="name">car.brand.tree</field>
+        <field name="model">car.brand</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="nbr"/>
+                <field name="ref"/>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="view_car_brand_search">
+        <field name="name">car.brand.search</field>
+        <field name="model">car.brand</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="ref" filter_domain="['|', ('id', 'ilike', self), ('ref','ilike', self)]"/>
+                <separator/>
+            </search>
+        </field>
+    </record>
+    <record id="action_car_brand" model="ir.actions.act_window">
+        <field name="name">Brand</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">car.brand</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="search_view_id" ref="car_agency.view_car_brand_search"/>
+    </record>
+    <menuitem
+            id="menu_brand"
+            name="Brand"
+            parent="menu_cars_group"
+            action="action_car_brand"
+            sequence="10"
+    />
+
+</odoo>

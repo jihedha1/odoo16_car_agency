@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.ui.view" id="view_company_agency_form">
+        <field name="name">company.agency.form</field>
+        <field name="model">company.agency</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <field name="state" widget="statusbar"
+                           options="{'clickable':1}"/>
+                </header>
+                <sheet>
+                    <widget name="web_ribbon" title="Archived" bg_color="bg-danger"
+                            attrs="{'invisible': [('active', '=', True)]}"/>
+                    <div class="oe_titel">
+                        <h1>
+                            <field name="ref" readonly="1"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="logo" widget="image"
+                                   style="max-width: 200px; max-height: 200px;  margin-left:100px"/>
+                        </group>
+                    </group>
+                    <group style="margin-top: 25px">
+                        <group string="The Agency">
+                            <field name="name"/>
+                            <field name="registration_number"/>
+                            <field name="responsible_id" widget="many2one_avatar_user"/>
+                            <field name="date"/>
+                        </group>
+                        <group string="Agency Information">
+                            <field name="address"/>
+                            <field name="phone" widget="phone"/>
+                            <field name="email" widget="email"/>
+                            <field name="website" widget="url"/>
+                        </group>
+                        <notebook>
+                            <page string="Cars">
+                                <field name="car_ids"/>
+                            </page>
+                            <page string="Notes">
+                                <group>
+                                    <field name="notes"/>
+                                </group>
+                            </page>
+                        </notebook>
+                        <field name="active" invisible="1"/>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" groups="base.group_user"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+        <record model="ir.ui.view" id="company_agency_kanban_view">
+        <field name="name">company.agency.kanban.view</field>
+        <field name="model">company.agency</field>
+        <field name="arch" type="xml">
+            <kanban>
+                <field name="name"/>
+                <field name="logo"/>
+                <field name="ref"/>
+                <field name="registration_number"/>
+                <field name="id"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click o_kanban_record_has_image_file d-flex align-items-center">
+                            <!-- Image container -->
+                            <div class="oe_module_vignette mr-3 ">
+                                <img t-att-src="kanban_image('company.agency', 'logo', record.id.raw_value)"
+                                     style="max-width: 150px; max-height: 150px;  " t-att-alt="record.name.raw_value"/>
+                            </div>
+                            <!-- Text container -->
+                            <div class="oe_kanban_details" style="margin-left:10px;">
+                                <strong>
+                                    <span t-esc="record.name.raw_value"/>
+                                </strong>
+                                <ul>
+                                    <li>Reference:
+                                        <span t-esc="record.ref.raw_value"/>
+                                    </li>
+                                    <li>ID:
+                                        <span t-esc="record.registration_number.raw_value"/>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </t>
+
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+
+    <record model="ir.ui.view" id="view_company_agency_tree">
+        <field name="name">company.agency.tree</field>
+        <field name="model">company.agency</field>
+        <field name="arch" type="xml">
+            <tree decoration-success="state == 'active'"
+                  decoration-warning="state == 'closed_temporarily'"
+                  decoration-danger="state == 'closed_permanently'">
+                <field name="registration_number"/>
+                <field name="name"/>
+                <field name="responsible_id" widget="many2one_avatar_user"/>
+                <field name="state"
+                       decoration-success="state == 'active'"
+                       decoration-warning="state == 'closed_temporarily'"
+                       decoration-danger="state == 'closed_permanently'"
+                       widget="badge"/>
+            </tree>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="view_company_agency_search">
+        <field name="name">company.agency.search</field>
+        <field name="model">company.agency</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name" filter_domain="['|', ('name', 'ilike', self), ('registration_number','ilike', self)]"/>
+                <field name="responsible_id"/>
+                <separator/>
+                <filter name="filter_active" string="Active" domain="[('state', '=', 'active')]"/>
+                <filter name="filter_closed_temporarily" string="Closed Temporarily" domain="[('state', '=', 'closed_temporarily')]"/>
+                <filter name="filter_closed_permanently" string="Closed Permanently" domain="[('state', '=', 'closed_permanently')]"/>
+                <separator/>
+                <filter name="achived" string="Archived" domain="[('active', '=', False)]"/>
+                <separator/>
+                <group expand="0" string="Group By">
+                    <filter name="group_gender" string="State" context="{'group_by':'state'}"/>
+                </group>
+
+            </search>
+        </field>
+    </record>
+
+    <record id="action_company_agency" model="ir.actions.act_window">
+        <field name="name">Agency</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">company.agency</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="search_view_id" ref="car_agency.view_company_agency_search"/>
+    </record>
+
+    <menuitem
+            id="menu_company_Agency"
+            name="Agency"
+            parent="menu_agency_root"
+            action="action_company_agency"
+            sequence="2"
+    />
+
+</odoo>

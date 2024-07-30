@@ -1,0 +1,30 @@
+{
+    'name': 'Car-agency Managment System',
+    'summary': "Manage a Car-agency easily",
+    'author': "Jihed Ha",
+    'website': "https://www.facebook.com/profile.php?id=100079998342788",
+    'data': [
+        'security/ir.model.access.csv',
+        'data/sequence.xml',
+        'wizard/sell.xml',
+        'wizard/rent_wizard.xml',
+        'wizard/return_wizard.xml',
+        'wizard/repair_wizard.xml',
+        'wizard/situation_wizard.xml',
+        'views/menu.xml',
+        'views/model.xml',
+        'views/agency.xml',
+        'views/car.xml',
+        'views/brand.xml',
+        'views/sale.xml',
+        'views/services.xml',
+        'views/damage.xml',
+        'views/rental.xml',
+        'views/maintenace.xml',
+        'views/notes.xml',
+        'reports/rent_template.xml',
+        'reports/sale_template.xml',
+
+    ],
+    'depends': ['mail', 'base']
+}

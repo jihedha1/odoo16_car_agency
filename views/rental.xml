@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.ui.view" id="view_car_rental_form">
+        <field name="name">car.rental.form</field>
+        <field name="model">car.rental</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_rented" states="accepted" type="object" string="Signe Contract"
+                            class="oe_highlight"/>
+                    <button name="action_rented_and_print" states="accepted" type="object"
+                            string="Signe Contract and Print"
+                            class="oe_highlight"/>
+                    <button name="action_accept" states="draft" type="object" string="Accept Contract"
+                            class="oe_highlight"/>
+                    <button name="action_cancel" states="draft,accepted" type="object" string="Cancel"/>
+                    <button name="action_draft" states="cancelled" type="object" string="Reset To Draft"/>
+                    <button name="%(car_agency.action_car_return_wizard)d" states="rented" type="action"
+                            string="Return The Rent"
+                            class="oe_highlight"/>
+                    <field name="state" widget="statusbar"
+                           options="{'clickable':0}"/>
+                </header>
+                <sheet>
+                    <group>
+                        <span class="oe_titel">
+                            <h1>
+                                <field name="ref" readonly="1"/>
+                            </h1>
+                        </span>
+                        <span>
+                            <field name="client_image" widget="image" nolabel="1"
+                                   style="max-width: 200px; max-height: 200px;  margin-left:800px"/>
+                        </span>
+                    </group>
+                    <group string="The Agency">
+                        <group>
+                            <field name="agency_id" attrs="{'readonly': [('state', '!=', 'draft')]}" options="{'no_create': True}"/>
+                            <field name="responsible" widget="many2one_avatar_user" options="{'no_create': True}"/>
+                        </group>
+                        <span>
+                            <field name="agency_image" widget="image"
+                                   style="max-width: 150px; max-height: 150px;  margin-left:100px"/>
+                        </span>
+                    </group>
+                    <group string="The Client">
+                        <group>
+                            <field name="client_id" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group string="The Car">
+                            <field name="car_id" attrs="{'readonly': [('state', '!=', 'draft')]}" options="{'no_create': True}"/>
+                            <field name="registration_number"/>
+                            <field name="date"/>
+                        </group>
+                        <div>
+                            <field name="brand_image" widget="image"
+                                   style="max-width: 100px; max-height: 100px;  margin-left:100px"/>
+                        </div>
+                    </group>
+                    <group>
+                        <group string="Rental Days">
+                            <label for="start_date" string="Date"/>
+                            <div name="dates" class="o_row">
+                                <field name="start_date" widget="daterange"
+                                       options='{"related_end_date": "finish_date"}' attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                <i class="fa fa-long-arrow-right mx-2 oe_edit_only" aria-label="Arrow icon"
+                                   title="Arrow"/>
+                                <i class="fa fa-long-arrow-right mx-2 oe_read_only" aria-label="Arrow icon"
+                                   title="Arrow"
+                                   attrs="{'invisible': [('start_date', '=', False), ('finish_date', '=', False)]}"/>
+                                <field name="finish_date" widget="daterange"
+                                       options='{"related_start_date": "start_date"}' attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                            </div>
+                            <field name="nb_day" readonly="1"/>
+                        </group>
+                        <group string="Price" style="margin-left:300px; width:200px">
+                            <field name="currency_id" invisible="1"/>
+                            <field name="rent_price" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group string="Return Information" attrs="{'invisible': [('state', 'not in', ['returned'])]}">
+                            <field name="situation" attrs="{'invisible': [('state', 'not in', ['returned'])]}"/>
+                            <field name="damage_ids"
+                                    attrs="{'invisible': ['|', ('state', '!=', 'returned'), ('situation', '!=', 'damaged')]}"
+                                    widget="many2many_tags" />
+                            <field name="services_ids"
+                                    attrs="{'invisible': ['|', ('state', '!=', 'returned'), ('situation', '!=', 'damaged')]}"
+                                    widget="many2many_tags"/>
+                        </group>
+                        <group class="oe_subtotal_footer oe_right" colspan="2" name="expense_total">
+                            <field name="total" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                            <div class="oe_inline o_td_label">
+                                <label for="costs"
+                                         attrs="{'invisible': ['|', ('state', '!=', 'returned'), ('situation', '!=', 'damaged')]}"/>
+                            </div>
+                            <field name="costs" widget="monetary" options="{'currency_field': 'currency_id'}"
+                                   class="oe_subtotal_footer_separator"
+                                     attrs="{'invisible': ['|', ('state', '!=', 'returned'), ('situation', '!=', 'damaged')]}"
+                                    nolabel="1"/>
+                            <separator />
+                            <field name="paid" attrs="{'invisible': [('state', 'not in', ['returned'])]}"/>
+                            <field name="total_return" widget="monetary" options="{'currency_field': 'currency_id'}"
+                                   attrs="{'invisible': [('state', 'not in', ['returned'])]}"
+                                   class="oe_subtotal_footer_separator"/>
+                            <field name="currency_id" invisible="1"/>
+                        </group>
+
+
+                        <group>
+
+                        </group>
+                    </group>
+                    <separator string="Terms and Conditions"/>
+                    <field name="notes" nolabel="1"
+                           placeholder="Write here all other information relative to this contract"/>
+                    <field name="active" invisible="1"/>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" groups="base.group_user"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_car_rental_tree">
+        <field name="name">car.rental.tree</field>
+        <field name="model">car.rental</field>
+        <field name="arch" type="xml">
+            <tree decoration-success="state == 'rented'"
+                  decoration-info="state == 'accepted'"
+                  decoration-primary="state == 'draft'"
+                  decoration-danger="state == 'cancelled'">
+                <field name="agency_id"/>
+                <field name="client_id" widget="many2one_avatar"/>
+                <field name="car_id"/>
+                <field name="start_date"/>
+                <field name="finish_date"/>
+                <field name="currency_id" invisible="1"/>
+                <field name="total" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                <field name="state"
+                       decoration-success="state == 'rented'"
+                       decoration-info="state == 'accepted'"
+                       decoration-primary="state == 'draft'"
+                       decoration-danger="state == 'cancelled'"
+                       widget="badge"/>
+                <field name="date"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_car_rental_search">
+        <field name="name">car.rental.search</field>
+        <field name="model">car.rental</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="agency_id"/>
+                <field name="car_id"/>
+                <field name="client_id"/>
+                <field name="start_date"/>
+                <field name="finish_date"/>
+                <separator/>
+                <filter name="filter_draft" string="Draft" domain="[('state', '=', 'draft')]"/>
+                <filter name="filter_rented" string="Rented" domain="[('state', '=', 'rented')]"/>
+                <filter name="filter_cancelled" string="Cancelled" domain="[('state', '=', 'Cancelled')]"/>
+                <filter name="filter_damaged" string="Damaged" domain="[('state', '=', 'damaged')]"/>
+                <filter name="filter_accepted" string="Accepted" domain="[('state', '=', 'accepted')]"/>
+                <separator/>
+                <filter name="achived" string="Archived" domain="[('active', '=', False)]"/>
+                <separator/>
+                <group expand="0" string="Group By">
+                    <filter name="group_gender" string="Agency" context="{'group_by':'agency_id'}"/>
+                    <filter name="group_gender1" string="Client" context="{'group_by':'client_id'}"/>
+                    <filter name="group_gender2" string="Car" context="{'group_by':'car_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="car_rental_calender_view" model="ir.ui.view">
+        <field name="name">car.rental.view</field>
+        <field name="model">car.rental</field>
+        <field name="arch" type="xml">
+            <calendar date_start="start_date" date_stop="finish_date" color="car_id" create="0" mode="year">
+                <field name="car_id"/>
+                <field name="agency_id"/>
+                <field name="client_id" widget="many2one_avatar"/>
+                <field name="currency_id" invisible="1"/>
+                <field name="total" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+            </calendar>
+        </field>
+    </record>
+
+    <record id="action_car_rental" model="ir.actions.act_window">
+        <field name="name">Car Rental</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">car.rental</field>
+        <field name="view_mode">calendar,tree,form</field>
+        <field name="search_view_id" ref="car_agency.view_car_rental_search"/>
+    </record>
+
+    <menuitem
+            id="menu_car_rental"
+            name="Rental"
+            parent="menu_management"
+            action="action_car_rental"
+            sequence="2"
+    />
+
+</odoo>

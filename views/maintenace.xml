@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.ui.view" id="view_car_maintenance_form">
+        <field name="name">car.maintenance.form</field>
+        <field name="model">car.maintenance</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_start" states="draft" type="object" string="Start Car Repair"
+                            class="oe_highlight"/>
+                    <button name="%(action_car_situation_wizard)d" states="in_progress" type="action" string="Complete The Repair"
+                            class="oe_highlight"/>
+                    <button name="action_cancel" states="draft,in_progress" type="object" string="Cancel"/>
+                    <button name="action_draft" states="cancelled" type="object" string="Reset To Draft"/>
+                    <field name="state" widget="statusbar"
+                           options="{'clickable':0}"/>
+                </header>
+                <sheet>
+                    <widget name="web_ribbon" title="Archived" bg_color="bg-dark"
+                            attrs="{'invisible': [('active', '=', True)]}"/>
+                    <widget name="web_ribbon" title="Done" bg_color="bg-success"
+                            attrs="{'invisible': [('state', '!=', 'done')]}"/>
+                    <widget name="web_ribbon" title="In Progress" bg_color="bg-info"
+                            attrs="{'invisible': [('state', '!=', 'in_progress')]}"/>
+                    <group class="oe_titel">
+                        <group>
+                            <h1>
+                                <field name="ref" readonly="1"/>
+                            </h1>
+                        </group>
+                        <span>
+                            <field name="brand_image" widget="image"
+                                   style="max-width: 100px; max-height: 100px;  margin-left:330px"/>
+                        </span>
+                    </group>
+                    <group string="The Car" style="margin-top: 15px">
+                        <group>
+                            <field name="agency_id"/>
+                            <field name="car_id" attrs="{'readonly': ['|',('state', '!=', 'draft'),('reason','=','damaged')]}" create="0" options="{'no_create': True}"/>
+                        </group>
+                        <span>
+                            <field name="agency_logo" widget="image"
+                                   style="max-width: 200px; max-height: 200px;margin-left:100px"/>
+                        </span>
+
+                    </group>
+                    <group>
+                        <group string="Maintenance Information">
+                            <field name="car_situation" readonly="1"/>
+                            <field name="reason" attrs="{'readonly': ['|',('state', '!=', 'draft'),('car_situation','=','damaged')]}"/>
+                            <field name="damage_ids"
+                                   attrs="{'invisible': [('reason', 'not in', ['damaged'])],'readonly': ['|',('state', '!=', 'draft'),('car_situation','=','damaged')]}"
+                                   widget="many2many_tags" options="{'no_create': True}" />
+                            <field name="services_ids"
+                                   widget="many2many_tags"
+                                   attrs="{'readonly': ['|',('state', '!=', 'draft'),('car_situation','=','damaged')]}" options="{'no_create': True}"/>
+                            <div class="oe_inline o_td_label">
+                                <label for="costs"/>
+                            </div>
+                            <field name="costs" widget="monetary" options="{'currency_field': 'currency_id'}"
+                                   class="oe_subtotal_footer_separator"
+                                   nolabel="1"/>
+                        </group>
+                        <group string="Maintenance Days">
+                            <label for="start_date" string="Date"/>
+                            <div name="dates" class="o_row">
+                                <field name="start_date" widget="daterange"
+                                       options='{"related_end_date": "finish_date"}'
+                                       attrs="{'readonly': ['|',('state', '!=', 'draft'),('reason','=','damaged')]}"/>
+                                <i class="fa fa-long-arrow-right mx-2 oe_edit_only" aria-label="Arrow icon"
+                                   title="Arrow"/>
+                                <i class="fa fa-long-arrow-right mx-2 oe_read_only" aria-label="Arrow icon"
+                                   title="Arrow"
+                                   attrs="{'invisible': [('start_date', '=', False), ('finish_date', '=', False)]}"/>
+                                <field name="finish_date" widget="daterange"
+                                       options='{"related_start_date": "start_date"}'
+                                       attrs="{'readonly': ['|',('state', '!=', 'draft'),('reason','=','damaged')]}"/>
+                            </div>
+                            <field name="nb_day" readonly="1"/>
+                        </group>
+                    </group>
+                    <group string="The Worker">
+                        <field name="repairman_id" attrs="{'readonly': ['|',('state', '!=', 'draft'),('car_situation','=','damaged')]}"/>
+                        <field name="phone" widget="phone"/>
+                        <field name="email" widget="email"/>
+                    </group>
+                    <group style="margin-top: 15px">
+                        <notebook>
+                            <page string="Notes">
+                                <group>
+                                    <field name="notes"/>
+                                </group>
+                            </page>
+                        </notebook>
+                        <field name="active" invisible="1"/>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" groups="base.group_user"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_car_maintenance_tree">
+        <field name="name">car.maintenance.tree</field>
+        <field name="model">car.maintenance</field>
+        <field name="arch" type="xml">
+            <tree decoration-success="state == 'done'"
+                  decoration-info="state == 'in_progress'">
+                <field name="car_id"/>
+                <field name="repairman_id" widget="many2one_avatar"/>
+                <field name="reason"
+                       decoration-danger="reason == 'damaged'"
+                       decoration-warning="reason == 'situation'"
+                       widget="badge"/>
+                <field name="nb_day"/>
+                <field name="state"
+                       decoration-success="state == 'done'"
+                       decoration-info="state == 'in_progress'"
+                       widget="badge"/>
+                <field name="currency_id" invisible="1"/>
+                <field name="costs" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+            </tree>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="view_car_maintenance_search">
+        <field name="name">car.maintenance.search</field>
+        <field name="model">car.maintenance</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="car_id"/>
+                <field name="repairman_id"/>
+                <field name="agency_id"/>
+                <separator/>
+                <filter name="filter_draft" string="Draft" domain="[('state', '=', 'draft')]"/>
+                <filter name="filter_in_progress" string="In Progress" domain="[('state', '=', 'in_progress')]"/>
+                <filter name="filter_done" string="Done" domain="[('state', '=', 'done')]"/>
+                <filter name="filter_cancelled" string="Cancelled" domain="[('state', '=', 'cancelled')]"/>
+                <separator/>
+                <filter name="achived" string="Archived" domain="[('active', '=', False)]"/>
+                <separator/>
+                <group expand="0" string="Group By">
+                    <filter name="group_car" string="Car" context="{'group_by':'car_id'}"/>
+                    <filter name="group_repairman" string="Repairman" context="{'group_by':'repairman_id'}"/>
+                    <filter name="group_reason" string="Reason" context="{'group_by':'reason'}"/>
+                    <filter name="group_state" string="Status" context="{'group_by':'state'}"/>
+                </group>
+
+            </search>
+        </field>
+    </record>
+
+    <record id="action_car_maintenance" model="ir.actions.act_window">
+        <field name="name">Car Maintenance</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">car.maintenance</field>
+        <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="car_agency.view_car_maintenance_search"/>
+    </record>
+
+    <menuitem
+            id="menu_car_maintenance"
+            name="Maintenance"
+            parent="menu_management"
+            action="action_car_maintenance"
+            sequence="3"
+    />
+
+</odoo>

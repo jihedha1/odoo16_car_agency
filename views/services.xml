@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.ui.view" id="view_car_services_form">
+        <field name="name">car.services.form</field>
+        <field name="model">car.services</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <widget name="web_ribbon" title="Archived" bg_color="bg-danger"
+                            attrs="{'invisible': [('active', '=', True)]}"/>
+                    <div class="oe_titel">
+                        <h1>
+                            <field name="ref" readonly="1"/>
+                        </h1>
+                    </div>
+                    <group style="margin-top: 25px">
+                        <group string="The Worker">
+                            <field name="repairman_id"/>
+                            <field name="phone"/>
+                            <field name="email"/>
+                        </group>
+                        <group string="Service">
+                            <field name="damage_id"/>
+                            <field name="name"/>
+                            <field name="mode"/>
+                            <field name="currency_id" invisible="1"/>
+                            <field name="price" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                        </group>
+                        <notebook>
+                            <page string="Notes">
+                                <group>
+                                    <field name="notes"/>
+                                </group>
+                            </page>
+                        </notebook>
+                        <field name="active" invisible="1"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_car_services_tree">
+        <field name="name">car.services.tree</field>
+        <field name="model">car.services</field>
+        <field name="arch" type="xml">
+            <tree decoration-success="mode == 'manual'"
+                  decoration-info="mode == 'automatic'">
+                <field name="ref"/>
+                <field name="name"/>
+                <field name="damage_id"/>
+                <field name="repairman_id" widget="many2one_avatar"/>
+                <field name="phone" widget="phone"/>
+                <field name="email" widget="email"/>
+                <field name="currency_id" invisible="1"/>
+                <field name="price" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                <field name="mode"
+                       decoration-success="mode == 'manual'"
+                       decoration-info="mode == 'automatic'"
+                       widget="badge"/>
+            </tree>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="view_car_services_search">
+        <field name="name">car.services.search</field>
+        <field name="model">car.services</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="id"/>
+                <field name="name"/>
+                <field name="repairman_id"/>
+                <separator/>
+                <filter name="filter_manual" string="Manual" domain="[('mode', '=', 'manual')]"/>
+                <filter name="filter_automatic" string="Automatic" domain="[('mode', '=', 'automatic')]"/>
+                <separator/>
+                <filter name="achived" string="Archived" domain="[('active', '=', False)]"/>
+                <separator/>
+                <group expand="0" string="Group By">
+                    <filter name="group_gender" string="Repairman" context="{'group_by':'repairman_id'}"/>
+                    <filter name="group_gender1" string="Damage" context="{'group_by':'damage_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_car_services" model="ir.actions.act_window">
+        <field name="name">Car Services</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">car.services</field>
+        <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="car_agency.view_car_services_search"/>
+    </record>
+
+    <menuitem
+            id="menu_car_services"
+            name="Services"
+            parent="menu_services_group"
+            action="action_car_services"
+            sequence="2"
+    />
+
+</odoo>

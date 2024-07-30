@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.ui.view" id="view_car_return_wizard_form">
+        <field name="name">car.return.wizard.form</field>
+        <field name="model">return.car</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <div class="oe_titel">
+                            <h1>
+                                <field name="ref" readonly="1"/>
+                            </h1>
+                        </div>
+                    </group>
+                    <group>
+                        <group string="The Agency">
+                            <field name="agency_id" readonly="1"/>
+                            <field name="responsible" widget="many2one_avatar_user"/>
+                        </group>
+                        <group string="The Client">
+                            <field name="client_id"/>
+                        </group>
+                    </group>
+                    <group string="The Car">
+                        <field name="car_id" readonly="1"/>
+                        <field name="registration_number"/>
+                    </group>
+                    <group string="Return Information">
+                        <group>
+                            <field name="car_situation"/>
+                            <field name="damage_ids"
+                                   attrs="{'invisible': [('car_situation', 'not in', ['damaged'])],'required': [('car_situation', '=', 'damaged')]}"
+                                    widget="many2many_tags" options="{'no_create': True}"/>
+                            <field name="services_ids"
+                                   attrs="{'invisible': [('car_situation', 'not in', ['damaged'])],'required': [('car_situation', '=', 'damaged')]}"
+                                    widget="many2many_tags" />
+                        </group>
+                        <group>
+                            <field name="currency_id" invisible="1"/>
+                            <field name="price_rent" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                            <field name="costs" widget="monetary" options="{'currency_field': 'currency_id'}"
+                                   attrs="{'invisible': [('car_situation', 'not in', ['damaged'])], 'required': [('car_situation', '=', 'damaged')]}"/>
+                            <strong>
+                                <p>Total</p>
+                                <field name="total" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                            </strong>
+                        </group>
+                    </group>
+                    <separator string="Terms and Conditions"/>
+                    <field name="notes" nolabel="1"
+                           placeholder="Write here all other information relative to this contract"/>
+                    <field name="active" invisible="1"/>
+                </sheet>
+                <footer>
+                    <button string="Save" type="object" name="action_save" class="btn-primary"/>
+                    <button string="Create An Invoice" type="object" name="action_create_inv" class="btn-primary"/>
+                    <button string="Save and Create Invoice" type="object" name="action_save_and_create_inv" class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+    <record id="action_car_return_wizard" model="ir.actions.act_window">
+        <field name="name">Car Return</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">return.car</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="view_car_return_wizard_form"/>
+        <field name="target">new</field>
+        <field name="context">{'active_id': active_id}</field>
+    </record>
+
+
+</odoo>

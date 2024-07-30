@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.ui.view" id="view_company_car_form">
+        <field name="name">company.car.form</field>
+        <field name="model">company.car</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_available" states="draft" type="object" string="Make Available"
+                            class="oe_highlight"/>
+                    <button name="%(action_car_rental_wizard)d" states="available,reserved,rented" type="action"
+                            string="Rent" class="oe_highlight"/>
+                    <button name="action_draft" states="sold" type="object" string="Reset To Draft"
+                            class="oe_highlight"/>
+                    <button name="%(action_car_sale_wizard)d" states="available" type="action" string="Sell"
+                            class="oe_highlight"/>
+                    <button name="%(action_car_repair_wizard)d" states="damaged,available" type="action" string="Repair"
+                            class="oe_highlight"/>
+                    <!--                    <button name="action_re_rent" states="rent" type="object" string="Re-rent" />-->
+                    <field name="state" widget="statusbar"
+                           options="{'clickable':0}"/>
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button class="oe_stat_button" type="object" name="action_view_reservation"
+                                icon="fa-check-square-o">
+                            <field name="reservation_count" widget="statinfo" string="reservations"/>
+                        </button>
+
+                        <button class="oe_stat_button" type="object" name="action_view_rents" icon="fa-history">
+                            <field name="rent_count" widget="statinfo" string="Rents History"/>
+                        </button>
+                        <button class="oe_stat_button" type="object" name="action_view_services" icon="fa-wrench">
+                            <field name="services_count" widget="statinfo" string="Services History"/>
+                        </button>
+                    </div>
+                    <widget name="web_ribbon" title="Archived" bg_color="bg-dark"
+                            attrs="{'invisible': [('active', '=', True)]}"/>
+                    <widget name="web_ribbon" title="Damaged" bg_color="bg-danger"
+                            attrs="{'invisible': [('state', '!=', 'damaged')]}"/>
+                    <widget name="web_ribbon" title="Available" bg_color="bg-success"
+                            attrs="{'invisible': [('state', '!=', 'available')]}"/>
+                    <widget name="web_ribbon" title="Rented" bg_color="bg-info"
+                            attrs="{'invisible': [('state', '!=', 'rented')]}"/>
+                    <widget name="web_ribbon" title="Maintenance" bg_color="bg-warning"
+                            attrs="{'invisible': [('state', '!=', 'maintenance')]}"/>
+                    <widget name="web_ribbon" title="Sold" bg_color="bg-primary"
+                            attrs="{'invisible': [('state', '!=', 'sold')]}"/>
+                    <div class="oe_title">
+                        <h2 class="d-flex">
+                            <field name="situation" widget="priority" class="me-3"
+                                   attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                        </h2>
+                    </div>
+                    <group class="oe_titel">
+                        <group>
+                            <h1>
+                                TN
+                                <field name="registration_number" readonly="1"/>
+                            </h1>
+                        </group>
+                        <span>
+                            <field name="brand_image" widget="image"
+                                   style="max-width: 100px; max-height: 100px;  margin-left:330px"/>
+                        </span>
+                    </group>
+                    <group string="The Agency" style="margin-top: 15px">
+                        <group>
+                            <field name="agency_id" options="{'no_create': True}"/>
+                            <field name="responsible" widget="many2one_avatar_user"/>
+                        </group>
+                        <span>
+                            <field name="agency_logo" widget="image"
+                                   style="max-width: 200px; max-height: 200px;margin-left:100px"/>
+                        </span>
+                    </group>
+                    <group style="margin-top: 15px">
+                        <group string="The Car">
+                            <field name="model_id" options="{'no_create': True}"/>
+                            <field name="registration_number"/>
+                            <field name="date"/>
+                            <field name="nb_photo"/>
+                        </group>
+                        <group string="Damage Information" attrs="{'invisible': [('state', 'not in', ['damaged'])]}">
+                            <field name="damage_res" attrs="{'invisible': [('state', 'not in', ['damaged'])]}"/>
+                            <field name="damage_ids"
+                                   attrs="{'invisible': [('state', 'not in', ['damaged'])]}"
+                                   widget="many2many_tags"/>
+                            <field name="services_ids"
+                                   attrs="{'invisible': [('state', 'not in', ['damaged'])]}"
+                                   widget="many2many_tags"/>
+                            <div class="oe_inline o_td_label">
+                                <label for="costs" attrs="{'invisible': [('state', '!=', 'damaged')]}"/>
+                            </div>
+                            <field name="costs" widget="monetary" options="{'currency_field': 'currency_id'}"
+                                   class="oe_subtotal_footer_separator"
+                                   attrs="{'invisible': [('state', '!=', 'damaged')]}"
+                                   nolabel="1"/>
+                        </group>
+                        <notebook>
+                            <page string="Car Photos" attrs="{'invisible': [('nb_photo', '=', '0')]}">
+                                <group string="Car Photos" attrs="{'invisible': [('nb_photo', '=', '0')]}">
+                                    <div t-attf-style="display: flex; justify-content: space-around; align-items: center;width:300%"
+                                         attrs="{'invisible': [('nb_photo', 'in', ['0'])]}">
+                                        <div style="text-align: center; margin: 10px; height: 150px; width:150px;">
+                                            <field name="ph1" widget="image"
+                                                   style="max-width: 170px; max-height: 170px;"/>
+                                            <label for="ph1">The Front Side</label>
+                                        </div>
+                                        <div style="text-align: center; margin: 10px; height: 150px; width:150px;"
+                                             attrs="{'invisible': [('nb_photo', 'in', ['0','1'])]}">
+                                            <field name="ph2" widget="image"
+                                                   style="max-width: 170px; max-height: 170px;"/>
+                                            <label for="ph2">The Back Side</label>
+                                        </div>
+                                        <div style="text-align: center; margin: 10px; height: 150px; width:150px;"
+                                             attrs="{'invisible': [('nb_photo', 'in', ['0','1','2'])]}">
+                                            <field name="ph3" widget="image"
+                                                   style="max-width: 170px; max-height: 170px;"/>
+                                            <label for="ph3">The Left Side</label>
+                                        </div>
+                                        <div style="text-align: center; margin: 10px;height: 150px; width:150px;"
+                                             attrs="{'invisible': [('nb_photo', 'in', ['0','1','2','3'])]}">
+                                            <field name="ph4" widget="image"
+                                                   style="max-width: 170px; max-height: 170px;"/>
+                                            <label for="ph4">The Right Side</label>
+                                        </div>
+                                    </div>
+                                </group>
+                            </page>
+                            <page string="Notes">
+                                <group>
+                                    <field name="notes"/>
+                                </group>
+                            </page>
+                        </notebook>
+                        <field name="active" invisible="1"/>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" groups="base.group_user"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_company_car_tree">
+        <field name="name">company.car.tree</field>
+        <field name="model">company.car</field>
+        <field name="arch" type="xml">
+            <tree decoration-success="state == 'available'"
+                  decoration-warning="state == 'maintenance'"
+                  decoration-primary="state == 'reserved'"
+                  decoration-info="state == 'rented'"
+                  decoration-danger="state == 'damaged'">
+                <field name="registration_number"/>
+                <field name="model_id"/>
+                <field name="agency_id"/>
+                <field name="state"
+                       decoration-success="state == 'available'"
+                       decoration-warning="state == 'maintenance'"
+                       decoration-primary="state == 'reserved'"
+                       decoration-info="state == 'rented'"
+                       decoration-danger="state == 'damaged'"
+                       decoration-muted="state == 'sold'"
+                       widget="badge"/>
+                <field name="date"/>
+            </tree>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="company_car_kanban_view">
+        <field name="name">company.car.kanban.view</field>
+        <field name="model">company.car</field>
+        <field name="arch" type="xml">
+            <kanban default_group_by="agency_id" sample="1">
+                <field name="ref"/>
+                <field name="name"/>
+                <field name="agency_id"/>
+                <field name="state"/>
+                <field name="registration_number"/>
+                <field name="id"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click o_kanban_record_has_image_file d-flex align-items-center ">
+                            <!-- Image container -->
+                            <div class="oe_module_vignette mr-3 ">
+                                <img t-att-src="kanban_image('company.car', 'ph1', record.id.raw_value)"
+                                     style="max-width: 150px; max-height: 150px;  " t-att-alt="record.ref.raw_value"/>
+                            </div>
+                            <!-- Text container -->
+                            <div class="oe_kanban_details" style="margin-left:10px;">
+                                <strong>
+                                    <span t-esc="record.name.raw_value"/>
+                                </strong>
+                                <ul>
+                                    <li>The Agency Owner:
+                                        <span t-esc="record.agency_id.raw_value"/>
+                                    </li>
+                                    <li>Status:
+                                        <span t-esc="record.state.raw_value"/>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </t>
+
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_company_car_search">
+        <field name="name">company.car.search</field>
+        <field name="model">company.car</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="registration_number"/>
+                <field name="date"/>
+                <field name="model_id"/>
+
+                <filter name="filter_draft" string="Draft" domain="[('state', '=', 'draft')]"/>
+                <filter name="filter_sold" string="Sold" domain="[('state', '=', 'sold')]"/>
+                <filter name="filter_rented" string="Rented" domain="[('state', '=', 'rented')]"/>
+                <filter name="filter_maintenance" string="Maintenance" domain="[('state', '=', 'maintenance')]"/>
+                <filter name="filter_available" string="Available" domain="[('state', '=', 'available')]"/>
+                <filter name="filter_damaged" string="Damaged" domain="[('state', '=', 'damaged')]"/>
+                <separator/>
+                <filter name="achived" string="Archived" domain="[('active', '=', False)]"/>
+                <separator/>
+                <group expand="0" string="Group By">
+                    <filter name="group_model" string="Model" context="{'group_by':'model_id'}"/>
+                    <filter name="group_agency" string="Agency" context="{'group_by':'agency_id'}"/>
+                </group>
+
+            </search>
+        </field>
+    </record>
+
+    <record id="action_company_car" model="ir.actions.act_window">
+        <field name="name">Car</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">company.car</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="search_view_id" ref="car_agency.view_company_car_search"/>
+    </record>
+
+    <menuitem
+            id="menu_company_car"
+            name="Car"
+            parent="menu_agency_root"
+            action="action_company_car"
+            sequence="1"
+    />
+
+</odoo>

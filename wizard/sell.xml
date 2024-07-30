@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record model="ir.ui.view" id="view_car_sale_wizard_form">
+        <field name="name">car.sale.wizard.form</field>
+        <field name="model">car.sale.wizard</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div class="oe_titel">
+                        <h1>
+                            <field name="ref" readonly="1"/>
+                        </h1>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 text-center">
+                            <field name="brand_image" widget="image" nolabel="1"
+                                   style="max-width: 150px; max-height: 150px;"/>
+                        </div>
+                    </div>
+                    <group string="The Agency" style="margin-top: 15px">
+                        <group>
+                            <field name="agency_id"/>
+                            <field name="responsible" widget="many2one_avatar_user"/>
+                        </group>
+                    </group>
+                    <group string="The Client" style="margin-top: 15px">
+                        <group>
+                            <field name="client_id" widget="res_partner_many2one"/>
+                        </group>
+                    </group>
+                    <separator/>
+                    <group style="margin-top: 15px">
+                        <group string="The Car">
+                            <field name="car_id"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group string="Price">
+                            <field name="currency_id" invisible="1"/>
+                            <field name="sale_price" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                            <field name="percentage_of_increase"
+                                   attrs="{'invisible': [('pay_mode', '=', 'full_payment')]}"/>
+                            <field name="advance_installment"
+                                   attrs="{'invisible': [('pay_mode', '=', 'full_payment')]}"
+                                   widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                            <field name="monthly_installment"
+                                   attrs="{'invisible': [('pay_mode', '=', 'full_payment')]}"
+                                   widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                        </group>
+                        <group string="Payment">
+                            <field name="payment_method"/>
+                            <field name="pay_mode" widget="radio"/>
+                            <field name="nbr_years"
+                                   attrs="{'invisible': [('pay_mode', '=', 'full_payment')]}"/>
+                            <field name="percentage_advanced"
+                                   attrs="{'invisible': [('pay_mode', '=', 'full_payment')]}"/>
+                        </group>
+                    </group>
+                    <separator string="Terms and Conditions"/>
+                    <field name="notes" nolabel="1"
+                           placeholder="Write here all other information relative to this contract"/>
+                    <field name="active" invisible="1"/>
+                </sheet>
+                <footer>
+                    <button name="action_save" type="object" string="Save" class="btn-primary"/>
+                    <button name="action_signe"  type="object" string="Signe Contract"
+                            class="oe_highlight"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_car_sale_wizard" model="ir.actions.act_window">
+        <field name="name">Car Sale</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">car.sale.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="view_car_sale_wizard_form"/>
+        <field name="target">new</field>
+        <field name="context">{'active_id': active_id}</field>
+    </record>
+
+</odoo>
