@@ -2002,7 +2002,7 @@ msgstr "Écrivez ici toutes les autres informations relatives à ce contrat"
 #. module: car_agency
 #: model:ir.model.fields.selection,name:car_agency.selection__car_rental__paid__yes
 msgid "Yes"
-msgstr ""
+msgstr "Oui"
 
 #. module: car_agency
 #. odoo-python
