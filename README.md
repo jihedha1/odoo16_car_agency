@@ -14,19 +14,6 @@ The Car Agency module for Odoo 16 provides a comprehensive solution for managing
 - **Security**: User access control and security measures.
 - **Sequences**: Configuration of sequences for records.
 
-## Installation
-1. Ensure you have Odoo 16 installed on your Ubuntu system.
-2. Clone this repository into your Odoo addons directory:
-    ```bash
-    git clone https://github.com/yourusername/car_agency.git
-    ```
-3. Update your Odoo configuration file to include the new module directory.
-4. Restart your Odoo server:
-    ```bash
-    sudo systemctl restart odoo
-    ```
-5. Navigate to the Apps menu in Odoo, find the Car Agency module, and install it.
-
 ## Usage
 1. **Configuration**:
     - Navigate to the Configuration menu to define car brands, models, damage types, and services.
@@ -107,10 +94,5 @@ Thank you for using the Car Agency module for Odoo 16!
    ./odoo-bin -u all -d <your_database>
 3. Install the car_agency module from the Odoo Apps menu.
 
-## Usage
-
-    Navigate to the Car Agency app from the Odoo dashboard.
-    Use the provided menus to manage car brands, individual cars, and rental agencies.
-    Create rental agreements from the Car Rentals menu.
    
 
