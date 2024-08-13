@@ -231,6 +231,7 @@
                 <group expand="0" string="Group By">
                     <filter name="group_model" string="Model" context="{'group_by':'model_id'}"/>
                     <filter name="group_agency" string="Agency" context="{'group_by':'agency_id'}"/>
+                    <filter name="group_agency" string="State" context="{'group_by':'state'}"/>
                 </group>
 
             </search>
