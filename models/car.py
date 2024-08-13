@@ -58,12 +58,13 @@ class CompanyCar(models.Model):
     services_count = fields.Integer(string='Services Count', compute='_services_count')
     name = fields.Char(string='Name')
 
+   # 1-(creat/writ )constraintes/depends/onchange
+
     def name_get(self):
         res = []
         for rec in self :
             res.append((rec.id, f'{rec.model_id.brand_id.name}-{rec.model_id.name}-TN{rec.registration_number}'))
             rec.name = f'{rec.model_id.brand_id.name}-{rec.model_id.name}-TN{rec.registration_number}'
-            print(rec.name)
         return res
 
     @api.model_create_multi
