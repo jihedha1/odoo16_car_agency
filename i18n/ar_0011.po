@@ -1,0 +1,2067 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* car_agency
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-08-15 01:42+0000\n"
+"PO-Revision-Date: 2024-08-15 01:42+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: car_agency
+#: model:ir.model.constraint,message:car_agency.constraint_car_maintenance_check_date
+msgid " TThe number Of Repair Days must be positive!"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.constraint,message:car_agency.constraint_car_rental_check_date
+#: model:ir.model.constraint,message:car_agency.constraint_car_rental_wizard_check_date
+msgid " The start date must be before the end date of the rent!"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields.selection,name:car_agency.selection__car_sale__nbr_years__1
+#: model:ir.model.fields.selection,name:car_agency.selection__car_sale_wizard__nbr_years__1
+msgid "1 year"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields.selection,name:car_agency.selection__car_sale__nbr_years__2
+#: model:ir.model.fields.selection,name:car_agency.selection__car_sale_wizard__nbr_years__2
+msgid "2 years"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields.selection,name:car_agency.selection__car_sale__percentage_advanced__0_2
+#: model:ir.model.fields.selection,name:car_agency.selection__car_sale_wizard__percentage_advanced__0_2
+msgid "20%"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields.selection,name:car_agency.selection__car_sale__nbr_years__3
+#: model:ir.model.fields.selection,name:car_agency.selection__car_sale_wizard__nbr_years__3
+msgid "3 years"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields.selection,name:car_agency.selection__car_sale__percentage_advanced__0_3
+#: model:ir.model.fields.selection,name:car_agency.selection__car_sale_wizard__percentage_advanced__0_3
+msgid "30%"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields.selection,name:car_agency.selection__car_sale__nbr_years__4
+#: model:ir.model.fields.selection,name:car_agency.selection__car_sale_wizard__nbr_years__4
+msgid "4 years"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields.selection,name:car_agency.selection__car_sale__percentage_advanced__0_4
+#: model:ir.model.fields.selection,name:car_agency.selection__car_sale_wizard__percentage_advanced__0_4
+msgid "40%"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields.selection,name:car_agency.selection__car_sale__nbr_years__5
+#: model:ir.model.fields.selection,name:car_agency.selection__car_sale_wizard__nbr_years__5
+msgid "5 years"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields.selection,name:car_agency.selection__car_sale__percentage_advanced__0_5
+#: model:ir.model.fields.selection,name:car_agency.selection__car_sale_wizard__percentage_advanced__0_5
+msgid "50%"
+msgstr ""
+
+#. module: car_agency
+#: model_terms:ir.ui.view,arch_db:car_agency.report_rent_template
+msgid ""
+"<br/>\n"
+"                        <strong>\n"
+"                            Price :\n"
+"                        </strong>"
+msgstr ""
+
+#. module: car_agency
+#: model_terms:ir.ui.view,arch_db:car_agency.report_sale_template
+msgid ""
+"<br/>\n"
+"                        <strong>\n"
+"                            Sale\n"
+"                        </strong>"
+msgstr ""
+
+#. module: car_agency
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_maintenance_form
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_rental_form
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_rental_wizard_form
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_repair_wizard_form
+msgid ""
+"<i class=\"fa fa-long-arrow-right mx-2 oe_edit_only\" aria-label=\"Arrow icon\" title=\"Arrow\"/>\n"
+"                                <i class=\"fa fa-long-arrow-right mx-2 oe_read_only\" aria-label=\"Arrow icon\" title=\"Arrow\" attrs=\"{'invisible': [('start_date', '=', False), ('finish_date', '=', False)]}\"/>"
+msgstr ""
+
+#. module: car_agency
+#: model_terms:ir.ui.view,arch_db:car_agency.report_sale_template
+msgid "<span>Advanced Installment</span>"
+msgstr ""
+
+#. module: car_agency
+#: model_terms:ir.ui.view,arch_db:car_agency.report_sale_template
+msgid "<span>Monthly Installment</span>"
+msgstr ""
+
+#. module: car_agency
+#: model_terms:ir.ui.view,arch_db:car_agency.report_sale_template
+msgid "<span>Number Of Years For Installments</span>"
+msgstr ""
+
+#. module: car_agency
+#: model_terms:ir.ui.view,arch_db:car_agency.report_sale_template
+msgid "<span>Percentage Of Increase (%)</span>"
+msgstr ""
+
+#. module: car_agency
+#: model_terms:ir.ui.view,arch_db:car_agency.report_sale_template
+msgid "<span>Percentage Of The Advanced Installment(%)</span>"
+msgstr ""
+
+#. module: car_agency
+#: model_terms:ir.ui.view,arch_db:car_agency.report_sale_template
+msgid ""
+"<strong>\n"
+"                                Installments Details:\n"
+"                            </strong>"
+msgstr ""
+
+#. module: car_agency
+#: model_terms:ir.ui.view,arch_db:car_agency.weblearns_layout
+msgid ""
+"<strong>\n"
+"                            Car Rental Agreement\n"
+"                        </strong>"
+msgstr ""
+
+#. module: car_agency
+#: model_terms:ir.ui.view,arch_db:car_agency.report_rent_template
+#: model_terms:ir.ui.view,arch_db:car_agency.report_sale_template
+msgid "<strong>Agency ID:</strong>"
+msgstr ""
+
+#. module: car_agency
+#: model_terms:ir.ui.view,arch_db:car_agency.report_sale_template
+msgid "<strong>Brand Logo:</strong>"
+msgstr ""
+
+#. module: car_agency
+#: model_terms:ir.ui.view,arch_db:car_agency.report_rent_template
+#: model_terms:ir.ui.view,arch_db:car_agency.report_sale_template
+msgid "<strong>Client Reference:</strong>"
+msgstr ""
+
+#. module: car_agency
+#: model_terms:ir.ui.view,arch_db:car_agency.report_rent_template
+msgid "<strong>Contract End Date:</strong>"
+msgstr ""
+
+#. module: car_agency
+#: model_terms:ir.ui.view,arch_db:car_agency.report_rent_template
+msgid "<strong>Contract Start Date:</strong>"
+msgstr ""
+
+#. module: car_agency
+#: model_terms:ir.ui.view,arch_db:car_agency.report_sale_template
+msgid "<strong>Date of License:</strong>"
+msgstr ""
+
+#. module: car_agency
+#: model_terms:ir.ui.view,arch_db:car_agency.report_sale_template
+msgid "<strong>Doors Number:</strong>"
+msgstr ""
+
+#. module: car_agency
+#: model_terms:ir.ui.view,arch_db:car_agency.report_sale_template
+msgid "<strong>Model Year:</strong>"
+msgstr ""
+
+#. module: car_agency
+#: model_terms:ir.ui.view,arch_db:car_agency.report_rent_template
+msgid "<strong>Number Of The Days:</strong>"
+msgstr ""
+
+#. module: car_agency
+#: model_terms:ir.ui.view,arch_db:car_agency.report_sale_template
+msgid "<strong>Pay Mode:</strong>"
+msgstr ""
+
+#. module: car_agency
+#: model_terms:ir.ui.view,arch_db:car_agency.report_sale_template
+msgid "<strong>Payment Method:</strong>"
+msgstr ""
+
+#. module: car_agency
+#: model_terms:ir.ui.view,arch_db:car_agency.report_sale_template
+msgid "<strong>Price:</strong>"
+msgstr ""
+
+#. module: car_agency
+#: model_terms:ir.ui.view,arch_db:car_agency.report_rent_template
+#: model_terms:ir.ui.view,arch_db:car_agency.report_sale_template
+msgid "<strong>Registration Number:</strong>"
+msgstr ""
+
+#. module: car_agency
+#: model_terms:ir.ui.view,arch_db:car_agency.report_rent_template
+msgid "<strong>Rent Price For One Day:</strong>"
+msgstr ""
+
+#. module: car_agency
+#: model_terms:ir.ui.view,arch_db:car_agency.report_sale_template
+msgid "<strong>Seats Number:</strong>"
+msgstr ""
+
+#. module: car_agency
+#: model_terms:ir.ui.view,arch_db:car_agency.report_rent_template
+#: model_terms:ir.ui.view,arch_db:car_agency.report_sale_template
+msgid "<strong>The Car:</strong>"
+msgstr ""
+
+#. module: car_agency
+#: model_terms:ir.ui.view,arch_db:car_agency.report_rent_template
+msgid "<strong>Total:</strong>"
+msgstr ""
+
+#. module: car_agency
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_rental_form
+msgid "Accept Contract"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields.selection,name:car_agency.selection__car_rental__state__accepted
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_rental_search
+msgid "Accepted"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields,field_description:car_agency.field_car_brand__message_needaction
+#: model:ir.model.fields,field_description:car_agency.field_car_maintenance__message_needaction
+#: model:ir.model.fields,field_description:car_agency.field_car_model__message_needaction
+#: model:ir.model.fields,field_description:car_agency.field_car_rental__message_needaction
+#: model:ir.model.fields,field_description:car_agency.field_car_sale__message_needaction
+#: model:ir.model.fields,field_description:car_agency.field_company_agency__message_needaction
+#: model:ir.model.fields,field_description:car_agency.field_company_car__message_needaction
+msgid "Action Needed"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields,field_description:car_agency.field_car_brand__active
+#: model:ir.model.fields,field_description:car_agency.field_car_damage__active
+#: model:ir.model.fields,field_description:car_agency.field_car_maintenance__active
+#: model:ir.model.fields,field_description:car_agency.field_car_model__active
+#: model:ir.model.fields,field_description:car_agency.field_car_rental__active
+#: model:ir.model.fields,field_description:car_agency.field_car_rental_wizard__active
+#: model:ir.model.fields,field_description:car_agency.field_car_repair_wizard__active
+#: model:ir.model.fields,field_description:car_agency.field_car_sale__active
+#: model:ir.model.fields,field_description:car_agency.field_car_sale_wizard__active
+#: model:ir.model.fields,field_description:car_agency.field_car_services__active
+#: model:ir.model.fields,field_description:car_agency.field_company_agency__active
+#: model:ir.model.fields,field_description:car_agency.field_company_car__active
+#: model:ir.model.fields,field_description:car_agency.field_return_car__active
+#: model:ir.model.fields.selection,name:car_agency.selection__car_brand__state__active
+#: model:ir.model.fields.selection,name:car_agency.selection__company_agency__state__active
+#: model_terms:ir.ui.view,arch_db:car_agency.view_company_agency_search
+msgid "Active"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields,field_description:car_agency.field_company_agency__address
+msgid "Address "
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields,field_description:car_agency.field_car_sale__advance_installment
+#: model:ir.model.fields,field_description:car_agency.field_car_sale_wizard__advance_installment
+msgid "Advanced Installment"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.actions.act_window,name:car_agency.action_company_agency
+#: model:ir.ui.menu,name:car_agency.menu_company_Agency
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_rental_search
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_sale_search
+#: model_terms:ir.ui.view,arch_db:car_agency.view_company_car_search
+msgid "Agency"
+msgstr ""
+
+#. module: car_agency
+#: model_terms:ir.ui.view,arch_db:car_agency.view_company_agency_form
+msgid "Agency Information"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields,field_description:car_agency.field_company_agency__name
+msgid "Agency Name"
+msgstr ""
+
+#. module: car_agency
+#: model_terms:ir.ui.view,arch_db:car_agency.report_rent_template
+#: model_terms:ir.ui.view,arch_db:car_agency.report_sale_template
+msgid "Agency Representative Signature:"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields.selection,name:car_agency.selection__car_brand__state__approved
+msgid "Approved"
+msgstr ""
+
+#. module: car_agency
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_brand_form
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_damage_search
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_maintenance_form
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_maintenance_search
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_model_form
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_model_search
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_rental_search
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_sale_search
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_services_form
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_services_search
+#: model_terms:ir.ui.view,arch_db:car_agency.view_company_agency_form
+#: model_terms:ir.ui.view,arch_db:car_agency.view_company_agency_search
+#: model_terms:ir.ui.view,arch_db:car_agency.view_company_car_form
+#: model_terms:ir.ui.view,arch_db:car_agency.view_company_car_search
+msgid "Archived"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields,field_description:car_agency.field_car_brand__message_attachment_count
+#: model:ir.model.fields,field_description:car_agency.field_car_maintenance__message_attachment_count
+#: model:ir.model.fields,field_description:car_agency.field_car_model__message_attachment_count
+#: model:ir.model.fields,field_description:car_agency.field_car_rental__message_attachment_count
+#: model:ir.model.fields,field_description:car_agency.field_car_sale__message_attachment_count
+#: model:ir.model.fields,field_description:car_agency.field_company_agency__message_attachment_count
+#: model:ir.model.fields,field_description:car_agency.field_company_car__message_attachment_count
+msgid "Attachment Count"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields.selection,name:car_agency.selection__car_model__transmission__automatic
+#: model:ir.model.fields.selection,name:car_agency.selection__car_services__mode__automatic
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_services_search
+msgid "Automatic"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields.selection,name:car_agency.selection__car_repair_wizard__car_situation__available
+#: model:ir.model.fields.selection,name:car_agency.selection__company_car__state__available
+#: model_terms:ir.ui.view,arch_db:car_agency.view_company_car_form
+#: model_terms:ir.ui.view,arch_db:car_agency.view_company_car_search
+msgid "Available"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields.selection,name:car_agency.selection__car_sale__payment_method__bank_transfers
+#: model:ir.model.fields.selection,name:car_agency.selection__car_sale_wizard__payment_method__bank_transfers
+msgid "Bank Transfers"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.actions.act_window,name:car_agency.action_car_brand
+#: model:ir.ui.menu,name:car_agency.menu_brand
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_model_search
+msgid "Brand"
+msgstr ""
+
+#. module: car_agency
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_brand_form
+msgid "Brand Information"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields,field_description:car_agency.field_car_brand__name
+msgid "Brand Name "
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model,name:car_agency.model_car_brand
+msgid "Brand Records"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields,field_description:car_agency.field_car_brand__ref
+#: model:ir.model.fields,field_description:car_agency.field_car_model__ref
+#: model:ir.model.fields,field_description:car_agency.field_car_rental__ref
+#: model:ir.model.fields,field_description:car_agency.field_car_rental_wizard__ref
+#: model:ir.model.fields,field_description:car_agency.field_car_repair_wizard__ref
+#: model:ir.model.fields,field_description:car_agency.field_car_sale__ref
+#: model:ir.model.fields,field_description:car_agency.field_car_sale_wizard__ref
+#: model:ir.model.fields,field_description:car_agency.field_car_services__ref
+#: model:ir.model.fields,field_description:car_agency.field_company_agency__ref
+#: model:ir.model.fields,field_description:car_agency.field_company_car__ref
+#: model:ir.model.fields,field_description:car_agency.field_return_car__ref
+msgid "Brand Reference"
+msgstr ""
+
+#. module: car_agency
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_maintenance_form
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_rental_form
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_rental_wizard_form
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_repair_wizard_form
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_return_wizard_form
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_sale_form
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_sale_wizard_form
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_situation_wizard_form
+msgid "Cancel"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields.selection,name:car_agency.selection__car_maintenance__state__cancelled
+#: model:ir.model.fields.selection,name:car_agency.selection__car_rental__state__cancelled
+#: model:ir.model.fields.selection,name:car_agency.selection__car_sale__state__cancelled
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_maintenance_search
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_rental_search
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_sale_search
+msgid "Cancelled"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.actions.act_window,name:car_agency.action_company_car
+#: model:ir.model.fields,field_description:car_agency.field_car_rental__car_id
+#: model:ir.model.fields,field_description:car_agency.field_car_rental_wizard__car_id
+#: model:ir.model.fields,field_description:car_agency.field_car_sale__car_id
+#: model:ir.model.fields,field_description:car_agency.field_car_sale_wizard__car_id
+#: model:ir.model.fields,field_description:car_agency.field_return_car__car_id
+#: model:ir.ui.menu,name:car_agency.menu_company_car
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_maintenance_search
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_rental_search
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_sale_search
+msgid "Car"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.ui.menu,name:car_agency.menu_agency_root
+#: model_terms:ir.ui.view,arch_db:car_agency.res_config_settings_view_form_car
+msgid "Car Agency"
+msgstr ""
+
+#. module: car_agency
+#: model_terms:ir.ui.view,arch_db:car_agency.res_config_settings_view_form_car
+msgid "Car Agency Management"
+msgstr ""
+
+#. module: car_agency
+#: model_terms:ir.ui.view,arch_db:car_agency.weblearns_layout
+msgid "Car Agency Management System."
+msgstr ""
+
+#. module: car_agency
+#: model:ir.actions.act_window,name:car_agency.action_car_damage
+#: model:ir.model,name:car_agency.model_car_damage
+msgid "Car Damage"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.actions.act_window,name:car_agency.action_car_maintenance
+#: model:ir.model,name:car_agency.model_car_maintenance
+msgid "Car Maintenance"
+msgstr ""
+
+#. module: car_agency
+#: model_terms:ir.ui.view,arch_db:car_agency.view_company_car_form
+msgid "Car Photos"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model,name:car_agency.model_company_car
+msgid "Car Records"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.actions.act_window,name:car_agency.action_car_rental_wizard
+msgid "Car Rent"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.actions.act_window,name:car_agency.action_car_rental
+msgid "Car Rental"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.actions.act_window,name:car_agency.action_car_repair_wizard
+msgid "Car Repair"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.actions.act_window,name:car_agency.action_car_return_wizard
+msgid "Car Return"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.actions.act_window,name:car_agency.action_car_sale
+#: model:ir.actions.act_window,name:car_agency.action_car_sale_wizard
+msgid "Car Sale"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.actions.act_window,name:car_agency.action_car_services
+#: model:ir.model,name:car_agency.model_car_services
+msgid "Car Services"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.actions.act_window,name:car_agency.action_car_situation_wizard
+#: model:ir.model.fields,field_description:car_agency.field_car_maintenance__car_situation
+#: model:ir.model.fields,field_description:car_agency.field_car_rental__car_situation
+#: model:ir.model.fields,field_description:car_agency.field_car_rental__situation
+#: model:ir.model.fields,field_description:car_agency.field_car_rental_wizard__car_situation
+#: model:ir.model.fields,field_description:car_agency.field_return_car__car_situation
+msgid "Car Situation"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model,name:car_agency.model_car_situation_wizard
+msgid "Car Situation Wizard"
+msgstr ""
+
+#. module: car_agency
+#. odoo-python
+#: code:addons/car_agency/wizard/rent_wizard.py:0
+#: code:addons/car_agency/wizard/repair_wizard.py:0
+#, python-format
+msgid "Car record not found."
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields,field_description:car_agency.field_company_agency__car_ids
+#: model:ir.ui.menu,name:car_agency.menu_cars_group
+#: model_terms:ir.ui.view,arch_db:car_agency.view_company_agency_form
+msgid "Cars"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields.selection,name:car_agency.selection__car_sale__payment_method__cash
+#: model:ir.model.fields.selection,name:car_agency.selection__car_sale_wizard__payment_method__cash
+msgid "Cash"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields.selection,name:car_agency.selection__car_sale__payment_method__cheque
+#: model:ir.model.fields.selection,name:car_agency.selection__car_sale_wizard__payment_method__cheque
+msgid "Cheque"
+msgstr ""
+
+#. module: car_agency
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_rental_search
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_sale_search
+msgid "Client"
+msgstr ""
+
+#. module: car_agency
+#: model_terms:ir.ui.view,arch_db:car_agency.report_rent_template
+#: model_terms:ir.ui.view,arch_db:car_agency.report_sale_template
+msgid "Client Signature:"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields.selection,name:car_agency.selection__company_agency__state__closed_permanently
+#: model_terms:ir.ui.view,arch_db:car_agency.view_company_agency_search
+msgid "Closed Permanently"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields.selection,name:car_agency.selection__company_agency__state__closed_temporarily
+#: model_terms:ir.ui.view,arch_db:car_agency.view_company_agency_search
+msgid "Closed Temporarily"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields,field_description:car_agency.field_car_damage__company_id
+#: model:ir.model.fields,field_description:car_agency.field_car_maintenance__company_id
+#: model:ir.model.fields,field_description:car_agency.field_car_repair_wizard__company_id
+#: model:ir.model.fields,field_description:car_agency.field_car_services__company_id
+#: model:ir.model.fields,field_description:car_agency.field_return_car__company_id
+msgid "Company"
+msgstr ""
+
+#. module: car_agency
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_maintenance_form
+msgid "Complete The Repair"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields.selection,name:car_agency.selection__car_model__state__concept
+msgid "Concept"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model,name:car_agency.model_res_config_settings
+msgid "Config Settings"
+msgstr "تهيئة الإعدادات "
+
+#. module: car_agency
+#: model:ir.ui.menu,name:car_agency.menu_car
+msgid "Configuration"
+msgstr ""
+
+#. module: car_agency
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_brand_form
+msgid "Contact"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields,field_description:car_agency.field_car_maintenance__finish_date
+#: model:ir.model.fields,field_description:car_agency.field_car_rental__finish_date
+#: model:ir.model.fields,field_description:car_agency.field_car_rental_wizard__finish_date
+#: model:ir.model.fields,field_description:car_agency.field_car_repair_wizard__finish_date
+msgid "Contract End Date"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields,field_description:car_agency.field_car_maintenance__start_date
+#: model:ir.model.fields,field_description:car_agency.field_car_rental__start_date
+#: model:ir.model.fields,field_description:car_agency.field_car_rental_wizard__start_date
+#: model:ir.model.fields,field_description:car_agency.field_car_repair_wizard__start_date
+#: model:ir.model.fields,field_description:car_agency.field_car_sale__start_date
+#: model:ir.model.fields,field_description:car_agency.field_car_sale_wizard__start_date
+msgid "Contract Start Date"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields,field_description:car_agency.field_car_damage__cost
+#: model:ir.model.fields,field_description:car_agency.field_car_maintenance__costs
+#: model:ir.model.fields,field_description:car_agency.field_car_repair_wizard__costs
+msgid "Cost"
+msgstr ""
+
+#. module: car_agency
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_return_wizard_form
+msgid "Create An Invoice"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields,field_description:car_agency.field_car_brand__create_uid
+#: model:ir.model.fields,field_description:car_agency.field_car_damage__create_uid
+#: model:ir.model.fields,field_description:car_agency.field_car_maintenance__create_uid
+#: model:ir.model.fields,field_description:car_agency.field_car_model__create_uid
+#: model:ir.model.fields,field_description:car_agency.field_car_rental__create_uid
+#: model:ir.model.fields,field_description:car_agency.field_car_rental_wizard__create_uid
+#: model:ir.model.fields,field_description:car_agency.field_car_repair_wizard__create_uid
+#: model:ir.model.fields,field_description:car_agency.field_car_sale__create_uid
+#: model:ir.model.fields,field_description:car_agency.field_car_sale_wizard__create_uid
+#: model:ir.model.fields,field_description:car_agency.field_car_services__create_uid
+#: model:ir.model.fields,field_description:car_agency.field_car_situation_wizard__create_uid
+#: model:ir.model.fields,field_description:car_agency.field_company_agency__create_uid
+#: model:ir.model.fields,field_description:car_agency.field_company_car__create_uid
+#: model:ir.model.fields,field_description:car_agency.field_return_car__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields,field_description:car_agency.field_car_brand__create_date
+#: model:ir.model.fields,field_description:car_agency.field_car_damage__create_date
+#: model:ir.model.fields,field_description:car_agency.field_car_maintenance__create_date
+#: model:ir.model.fields,field_description:car_agency.field_car_model__create_date
+#: model:ir.model.fields,field_description:car_agency.field_car_rental__create_date
+#: model:ir.model.fields,field_description:car_agency.field_car_rental_wizard__create_date
+#: model:ir.model.fields,field_description:car_agency.field_car_repair_wizard__create_date
+#: model:ir.model.fields,field_description:car_agency.field_car_sale__create_date
+#: model:ir.model.fields,field_description:car_agency.field_car_sale_wizard__create_date
+#: model:ir.model.fields,field_description:car_agency.field_car_services__create_date
+#: model:ir.model.fields,field_description:car_agency.field_car_situation_wizard__create_date
+#: model:ir.model.fields,field_description:car_agency.field_company_agency__create_date
+#: model:ir.model.fields,field_description:car_agency.field_company_car__create_date
+#: model:ir.model.fields,field_description:car_agency.field_return_car__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields.selection,name:car_agency.selection__car_sale__payment_method__cryptocurrencies
+#: model:ir.model.fields.selection,name:car_agency.selection__car_sale_wizard__payment_method__cryptocurrencies
+msgid "Cryptocurrencies"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields,field_description:car_agency.field_car_damage__currency_id
+#: model:ir.model.fields,field_description:car_agency.field_car_maintenance__currency_id
+#: model:ir.model.fields,field_description:car_agency.field_car_rental__currency_id
+#: model:ir.model.fields,field_description:car_agency.field_car_rental_wizard__currency_id
+#: model:ir.model.fields,field_description:car_agency.field_car_repair_wizard__currency_id
+#: model:ir.model.fields,field_description:car_agency.field_car_sale__currency_id
+#: model:ir.model.fields,field_description:car_agency.field_car_sale_wizard__currency_id
+#: model:ir.model.fields,field_description:car_agency.field_car_services__currency_id
+#: model:ir.model.fields,field_description:car_agency.field_company_car__currency_id
+#: model:ir.model.fields,field_description:car_agency.field_return_car__currency_id
+msgid "Currency"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields,field_description:car_agency.field_car_maintenance__damage_ids
+#: model:ir.model.fields,field_description:car_agency.field_car_rental__damage_ids
+#: model:ir.model.fields,field_description:car_agency.field_car_repair_wizard__damage_ids
+#: model:ir.model.fields,field_description:car_agency.field_company_car__damage_ids
+#: model:ir.model.fields,field_description:car_agency.field_return_car__damage_ids
+#: model:ir.ui.menu,name:car_agency.menu_services_group
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_services_search
+msgid "Damage"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields,field_description:car_agency.field_return_car__costs
+msgid "Damage Costs"
+msgstr ""
+
+#. module: car_agency
+#: model_terms:ir.ui.view,arch_db:car_agency.view_company_car_form
+msgid "Damage Information"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields.selection,name:car_agency.selection__car_maintenance__reason__damaged
+#: model:ir.model.fields.selection,name:car_agency.selection__car_rental__situation__damaged
+#: model:ir.model.fields.selection,name:car_agency.selection__car_repair_wizard__car_situation__damaged
+#: model:ir.model.fields.selection,name:car_agency.selection__car_repair_wizard__reason__damaged
+#: model:ir.model.fields.selection,name:car_agency.selection__company_car__state__damaged
+#: model:ir.model.fields.selection,name:car_agency.selection__return_car__car_situation__damaged
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_rental_search
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_sale_search
+#: model_terms:ir.ui.view,arch_db:car_agency.view_company_car_form
+#: model_terms:ir.ui.view,arch_db:car_agency.view_company_car_search
+msgid "Damaged"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields,field_description:car_agency.field_company_car__costs
+msgid "Damaged Costs"
+msgstr ""
+
+#. module: car_agency
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_maintenance_form
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_rental_form
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_rental_wizard_form
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_repair_wizard_form
+msgid "Date"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields,field_description:car_agency.field_car_rental__date
+#: model:ir.model.fields,field_description:car_agency.field_car_sale__date
+#: model:ir.model.fields,field_description:car_agency.field_company_agency__date
+#: model:ir.model.fields,field_description:car_agency.field_company_car__date
+msgid "Date of License"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields,help:car_agency.field_car_maintenance__start_date
+#: model:ir.model.fields,help:car_agency.field_car_rental__start_date
+#: model:ir.model.fields,help:car_agency.field_car_rental_wizard__start_date
+#: model:ir.model.fields,help:car_agency.field_car_repair_wizard__start_date
+#: model:ir.model.fields,help:car_agency.field_car_sale__start_date
+#: model:ir.model.fields,help:car_agency.field_car_sale_wizard__start_date
+msgid "Date when the coverage of the contract begins"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields,help:car_agency.field_car_maintenance__finish_date
+#: model:ir.model.fields,help:car_agency.field_car_rental__finish_date
+#: model:ir.model.fields,help:car_agency.field_car_rental_wizard__finish_date
+#: model:ir.model.fields,help:car_agency.field_car_repair_wizard__finish_date
+msgid "Date when the coverage of the contract ends"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields.selection,name:car_agency.selection__car_model__state__discontinued
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_model_search
+msgid "Discontinued"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields,field_description:car_agency.field_car_brand__display_name
+#: model:ir.model.fields,field_description:car_agency.field_car_damage__display_name
+#: model:ir.model.fields,field_description:car_agency.field_car_maintenance__display_name
+#: model:ir.model.fields,field_description:car_agency.field_car_model__display_name
+#: model:ir.model.fields,field_description:car_agency.field_car_rental__display_name
+#: model:ir.model.fields,field_description:car_agency.field_car_rental_wizard__display_name
+#: model:ir.model.fields,field_description:car_agency.field_car_repair_wizard__display_name
+#: model:ir.model.fields,field_description:car_agency.field_car_sale__display_name
+#: model:ir.model.fields,field_description:car_agency.field_car_sale_wizard__display_name
+#: model:ir.model.fields,field_description:car_agency.field_car_services__display_name
+#: model:ir.model.fields,field_description:car_agency.field_car_situation_wizard__display_name
+#: model:ir.model.fields,field_description:car_agency.field_company_agency__display_name
+#: model:ir.model.fields,field_description:car_agency.field_company_car__display_name
+#: model:ir.model.fields,field_description:car_agency.field_return_car__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields.selection,name:car_agency.selection__car_maintenance__state__done
+#: model:ir.model.fields.selection,name:car_agency.selection__car_sale__state__done
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_maintenance_form
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_maintenance_search
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_sale_search
+msgid "Done"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields,field_description:car_agency.field_car_model__doors
+msgid "Doors Number"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields.selection,name:car_agency.selection__car_brand__state__draft
+#: model:ir.model.fields.selection,name:car_agency.selection__car_maintenance__state__draft
+#: model:ir.model.fields.selection,name:car_agency.selection__car_rental__state__draft
+#: model:ir.model.fields.selection,name:car_agency.selection__car_sale__state__draft
+#: model:ir.model.fields.selection,name:car_agency.selection__company_agency__state__draft
+#: model:ir.model.fields.selection,name:car_agency.selection__company_car__state__draft
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_maintenance_search
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_rental_search
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_sale_search
+#: model_terms:ir.ui.view,arch_db:car_agency.view_company_car_search
+msgid "Draft"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields,field_description:car_agency.field_car_model__electric_assistance
+msgid "Electric Assistance"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields,field_description:car_agency.field_car_brand__email
+#: model:ir.model.fields,field_description:car_agency.field_company_agency__email
+msgid "Email"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields.selection,name:car_agency.selection__car_situation_wizard__situation__5
+#: model:ir.model.fields.selection,name:car_agency.selection__company_car__situation__5
+msgid "Excellent"
+msgstr ""
+
+#. module: car_agency
+#. odoo-python
+#: code:addons/car_agency/wizard/repair_wizard.py:0
+#, python-format
+msgid "Failed to create maintenance records."
+msgstr ""
+
+#. module: car_agency
+#. odoo-python
+#: code:addons/car_agency/wizard/rent_wizard.py:0
+#, python-format
+msgid "Failed to create rental contract."
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields,field_description:car_agency.field_car_brand__message_follower_ids
+#: model:ir.model.fields,field_description:car_agency.field_car_maintenance__message_follower_ids
+#: model:ir.model.fields,field_description:car_agency.field_car_model__message_follower_ids
+#: model:ir.model.fields,field_description:car_agency.field_car_rental__message_follower_ids
+#: model:ir.model.fields,field_description:car_agency.field_car_sale__message_follower_ids
+#: model:ir.model.fields,field_description:car_agency.field_company_agency__message_follower_ids
+#: model:ir.model.fields,field_description:car_agency.field_company_car__message_follower_ids
+msgid "Followers"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields,field_description:car_agency.field_car_brand__message_partner_ids
+#: model:ir.model.fields,field_description:car_agency.field_car_maintenance__message_partner_ids
+#: model:ir.model.fields,field_description:car_agency.field_car_model__message_partner_ids
+#: model:ir.model.fields,field_description:car_agency.field_car_rental__message_partner_ids
+#: model:ir.model.fields,field_description:car_agency.field_car_sale__message_partner_ids
+#: model:ir.model.fields,field_description:car_agency.field_company_agency__message_partner_ids
+#: model:ir.model.fields,field_description:car_agency.field_company_car__message_partner_ids
+msgid "Followers (Partners)"
+msgstr ""
+
+#. module: car_agency
+#: model_terms:ir.ui.view,arch_db:car_agency.report_rent_template
+#: model_terms:ir.ui.view,arch_db:car_agency.report_sale_template
+msgid "For further assistance or queries, contact our support team ."
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields.selection,name:car_agency.selection__car_sale__pay_mode__full_payment
+#: model:ir.model.fields.selection,name:car_agency.selection__car_sale_wizard__pay_mode__full_payment
+msgid "Full Payment"
+msgstr ""
+
+#. module: car_agency
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_damage_search
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_maintenance_search
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_model_search
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_rental_search
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_sale_search
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_services_search
+#: model_terms:ir.ui.view,arch_db:car_agency.view_company_agency_search
+#: model_terms:ir.ui.view,arch_db:car_agency.view_company_car_search
+msgid "Group By"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields,field_description:car_agency.field_car_brand__has_message
+#: model:ir.model.fields,field_description:car_agency.field_car_maintenance__has_message
+#: model:ir.model.fields,field_description:car_agency.field_car_model__has_message
+#: model:ir.model.fields,field_description:car_agency.field_car_rental__has_message
+#: model:ir.model.fields,field_description:car_agency.field_car_sale__has_message
+#: model:ir.model.fields,field_description:car_agency.field_company_agency__has_message
+#: model:ir.model.fields,field_description:car_agency.field_company_car__has_message
+msgid "Has Message"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields.selection,name:car_agency.selection__car_situation_wizard__situation__3
+#: model:ir.model.fields.selection,name:car_agency.selection__company_car__situation__3
+msgid "High"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields,field_description:car_agency.field_car_model__horsepower
+msgid "Horsepower"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields,field_description:car_agency.field_car_model__horsepower_tax
+msgid "Horsepower Taxation"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields,field_description:car_agency.field_car_brand__id
+#: model:ir.model.fields,field_description:car_agency.field_car_damage__id
+#: model:ir.model.fields,field_description:car_agency.field_car_maintenance__id
+#: model:ir.model.fields,field_description:car_agency.field_car_model__id
+#: model:ir.model.fields,field_description:car_agency.field_car_rental__id
+#: model:ir.model.fields,field_description:car_agency.field_car_rental_wizard__id
+#: model:ir.model.fields,field_description:car_agency.field_car_repair_wizard__id
+#: model:ir.model.fields,field_description:car_agency.field_car_sale__id
+#: model:ir.model.fields,field_description:car_agency.field_car_sale_wizard__id
+#: model:ir.model.fields,field_description:car_agency.field_car_services__id
+#: model:ir.model.fields,field_description:car_agency.field_car_situation_wizard__id
+#: model:ir.model.fields,field_description:car_agency.field_company_agency__id
+#: model:ir.model.fields,field_description:car_agency.field_company_car__id
+#: model:ir.model.fields,field_description:car_agency.field_return_car__id
+msgid "ID"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields,field_description:car_agency.field_car_brand__nbr
+#: model:ir.model.fields,field_description:car_agency.field_car_model__nbr
+msgid "ID "
+msgstr ""
+
+#. module: car_agency
+#: model_terms:ir.ui.view,arch_db:car_agency.car_brand_kanban_view
+#: model_terms:ir.ui.view,arch_db:car_agency.company_agency_kanban_view
+msgid "ID:"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields,help:car_agency.field_car_brand__message_needaction
+#: model:ir.model.fields,help:car_agency.field_car_maintenance__message_needaction
+#: model:ir.model.fields,help:car_agency.field_car_model__message_needaction
+#: model:ir.model.fields,help:car_agency.field_car_rental__message_needaction
+#: model:ir.model.fields,help:car_agency.field_car_sale__message_needaction
+#: model:ir.model.fields,help:car_agency.field_company_agency__message_needaction
+#: model:ir.model.fields,help:car_agency.field_company_car__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields,help:car_agency.field_car_brand__message_has_error
+#: model:ir.model.fields,help:car_agency.field_car_maintenance__message_has_error
+#: model:ir.model.fields,help:car_agency.field_car_model__message_has_error
+#: model:ir.model.fields,help:car_agency.field_car_rental__message_has_error
+#: model:ir.model.fields,help:car_agency.field_car_sale__message_has_error
+#: model:ir.model.fields,help:car_agency.field_company_agency__message_has_error
+#: model:ir.model.fields,help:car_agency.field_company_car__message_has_error
+msgid "If checked, some messages have a delivery error."
+msgstr ""
+
+#. module: car_agency
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_model_search
+msgid "In Conception"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields.selection,name:car_agency.selection__car_model__state__production
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_model_search
+msgid "In Production"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields.selection,name:car_agency.selection__car_maintenance__state__in_progress
+#: model:ir.model.fields.selection,name:car_agency.selection__car_sale__state__in_progress
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_maintenance_form
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_maintenance_search
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_sale_search
+msgid "In Progress"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields.selection,name:car_agency.selection__car_brand__state__inactive
+msgid "Inactive"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields,field_description:car_agency.field_car_brand__message_is_follower
+#: model:ir.model.fields,field_description:car_agency.field_car_maintenance__message_is_follower
+#: model:ir.model.fields,field_description:car_agency.field_car_model__message_is_follower
+#: model:ir.model.fields,field_description:car_agency.field_car_rental__message_is_follower
+#: model:ir.model.fields,field_description:car_agency.field_car_sale__message_is_follower
+#: model:ir.model.fields,field_description:car_agency.field_company_agency__message_is_follower
+#: model:ir.model.fields,field_description:car_agency.field_company_car__message_is_follower
+msgid "Is Follower"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields,field_description:car_agency.field_car_brand____last_update
+#: model:ir.model.fields,field_description:car_agency.field_car_damage____last_update
+#: model:ir.model.fields,field_description:car_agency.field_car_maintenance____last_update
+#: model:ir.model.fields,field_description:car_agency.field_car_model____last_update
+#: model:ir.model.fields,field_description:car_agency.field_car_rental____last_update
+#: model:ir.model.fields,field_description:car_agency.field_car_rental_wizard____last_update
+#: model:ir.model.fields,field_description:car_agency.field_car_repair_wizard____last_update
+#: model:ir.model.fields,field_description:car_agency.field_car_sale____last_update
+#: model:ir.model.fields,field_description:car_agency.field_car_sale_wizard____last_update
+#: model:ir.model.fields,field_description:car_agency.field_car_services____last_update
+#: model:ir.model.fields,field_description:car_agency.field_car_situation_wizard____last_update
+#: model:ir.model.fields,field_description:car_agency.field_company_agency____last_update
+#: model:ir.model.fields,field_description:car_agency.field_company_car____last_update
+#: model:ir.model.fields,field_description:car_agency.field_return_car____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields,field_description:car_agency.field_car_brand__write_uid
+#: model:ir.model.fields,field_description:car_agency.field_car_damage__write_uid
+#: model:ir.model.fields,field_description:car_agency.field_car_maintenance__write_uid
+#: model:ir.model.fields,field_description:car_agency.field_car_model__write_uid
+#: model:ir.model.fields,field_description:car_agency.field_car_rental__write_uid
+#: model:ir.model.fields,field_description:car_agency.field_car_rental_wizard__write_uid
+#: model:ir.model.fields,field_description:car_agency.field_car_repair_wizard__write_uid
+#: model:ir.model.fields,field_description:car_agency.field_car_sale__write_uid
+#: model:ir.model.fields,field_description:car_agency.field_car_sale_wizard__write_uid
+#: model:ir.model.fields,field_description:car_agency.field_car_services__write_uid
+#: model:ir.model.fields,field_description:car_agency.field_car_situation_wizard__write_uid
+#: model:ir.model.fields,field_description:car_agency.field_company_agency__write_uid
+#: model:ir.model.fields,field_description:car_agency.field_company_car__write_uid
+#: model:ir.model.fields,field_description:car_agency.field_return_car__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields,field_description:car_agency.field_car_brand__write_date
+#: model:ir.model.fields,field_description:car_agency.field_car_damage__write_date
+#: model:ir.model.fields,field_description:car_agency.field_car_maintenance__write_date
+#: model:ir.model.fields,field_description:car_agency.field_car_model__write_date
+#: model:ir.model.fields,field_description:car_agency.field_car_rental__write_date
+#: model:ir.model.fields,field_description:car_agency.field_car_rental_wizard__write_date
+#: model:ir.model.fields,field_description:car_agency.field_car_repair_wizard__write_date
+#: model:ir.model.fields,field_description:car_agency.field_car_sale__write_date
+#: model:ir.model.fields,field_description:car_agency.field_car_sale_wizard__write_date
+#: model:ir.model.fields,field_description:car_agency.field_car_services__write_date
+#: model:ir.model.fields,field_description:car_agency.field_car_situation_wizard__write_date
+#: model:ir.model.fields,field_description:car_agency.field_company_agency__write_date
+#: model:ir.model.fields,field_description:car_agency.field_company_car__write_date
+#: model:ir.model.fields,field_description:car_agency.field_return_car__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields.selection,name:car_agency.selection__car_situation_wizard__situation__1
+#: model:ir.model.fields.selection,name:car_agency.selection__company_car__situation__1
+msgid "Low"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields,field_description:car_agency.field_car_brand__message_main_attachment_id
+#: model:ir.model.fields,field_description:car_agency.field_car_maintenance__message_main_attachment_id
+#: model:ir.model.fields,field_description:car_agency.field_car_model__message_main_attachment_id
+#: model:ir.model.fields,field_description:car_agency.field_car_rental__message_main_attachment_id
+#: model:ir.model.fields,field_description:car_agency.field_car_sale__message_main_attachment_id
+#: model:ir.model.fields,field_description:car_agency.field_company_agency__message_main_attachment_id
+#: model:ir.model.fields,field_description:car_agency.field_company_car__message_main_attachment_id
+msgid "Main Attachment"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields.selection,name:car_agency.selection__company_car__state__maintenance
+#: model:ir.ui.menu,name:car_agency.menu_car_maintenance
+#: model_terms:ir.ui.view,arch_db:car_agency.view_company_car_form
+#: model_terms:ir.ui.view,arch_db:car_agency.view_company_car_search
+msgid "Maintenance"
+msgstr ""
+
+#. module: car_agency
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_maintenance_form
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_repair_wizard_form
+msgid "Maintenance Days"
+msgstr ""
+
+#. module: car_agency
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_maintenance_form
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_repair_wizard_form
+msgid "Maintenance Information"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields,field_description:car_agency.field_car_maintenance__ref
+msgid "Maintenance Reference"
+msgstr ""
+
+#. module: car_agency
+#: model_terms:ir.ui.view,arch_db:car_agency.view_company_car_form
+msgid "Make Available"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.ui.menu,name:car_agency.menu_management
+msgid "Management"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields.selection,name:car_agency.selection__car_model__transmission__manual
+#: model:ir.model.fields.selection,name:car_agency.selection__car_services__mode__manual
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_services_search
+msgid "Manual"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields,field_description:car_agency.field_car_brand__message_has_error
+#: model:ir.model.fields,field_description:car_agency.field_car_maintenance__message_has_error
+#: model:ir.model.fields,field_description:car_agency.field_car_model__message_has_error
+#: model:ir.model.fields,field_description:car_agency.field_car_rental__message_has_error
+#: model:ir.model.fields,field_description:car_agency.field_car_sale__message_has_error
+#: model:ir.model.fields,field_description:car_agency.field_company_agency__message_has_error
+#: model:ir.model.fields,field_description:car_agency.field_company_car__message_has_error
+msgid "Message Delivery error"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields,field_description:car_agency.field_car_brand__message_ids
+#: model:ir.model.fields,field_description:car_agency.field_car_maintenance__message_ids
+#: model:ir.model.fields,field_description:car_agency.field_car_model__message_ids
+#: model:ir.model.fields,field_description:car_agency.field_car_rental__message_ids
+#: model:ir.model.fields,field_description:car_agency.field_car_sale__message_ids
+#: model:ir.model.fields,field_description:car_agency.field_company_agency__message_ids
+#: model:ir.model.fields,field_description:car_agency.field_company_car__message_ids
+msgid "Messages"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields,field_description:car_agency.field_company_car__mileage
+msgid "Mileage"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.actions.act_window,name:car_agency.action_car_model
+#: model:ir.ui.menu,name:car_agency.menu_model
+#: model_terms:ir.ui.view,arch_db:car_agency.view_company_car_search
+msgid "Model"
+msgstr ""
+
+#. module: car_agency
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_model_form
+msgid "Model Information"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields,field_description:car_agency.field_car_model__name
+msgid "Model Name "
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields,field_description:car_agency.field_car_model__date
+msgid "Model Year"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields,field_description:car_agency.field_car_sale__monthly_installment
+#: model:ir.model.fields,field_description:car_agency.field_car_sale_wizard__monthly_installment
+msgid "Monthly Installment"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields.selection,name:car_agency.selection__car_sale__pay_mode__monthly_installments
+#: model:ir.model.fields.selection,name:car_agency.selection__car_sale_wizard__pay_mode__monthly_installments
+msgid "Monthly Installments"
+msgstr ""
+
+#. module: car_agency
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_model_form
+msgid "More Info"
+msgstr ""
+
+#. module: car_agency
+#: model_terms:ir.ui.view,arch_db:car_agency.report_rent_template
+#: model_terms:ir.ui.view,arch_db:car_agency.report_sale_template
+msgid "NB:"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields,field_description:car_agency.field_car_damage__name
+#: model:ir.model.fields,field_description:car_agency.field_car_services__name
+#: model:ir.model.fields,field_description:car_agency.field_company_car__name
+msgid "Name"
+msgstr ""
+
+#. module: car_agency
+#. odoo-python
+#: code:addons/car_agency/models/agency.py:0
+#: code:addons/car_agency/models/brand.py:0
+#: code:addons/car_agency/models/car.py:0
+#: code:addons/car_agency/models/maintenance.py:0
+#: code:addons/car_agency/models/model.py:0
+#: code:addons/car_agency/models/rental.py:0
+#: code:addons/car_agency/models/sale.py:0
+#: code:addons/car_agency/models/services.py:0
+#: code:addons/car_agency/wizard/rent_wizard.py:0
+#: code:addons/car_agency/wizard/repair_wizard.py:0
+#: code:addons/car_agency/wizard/return_wizard.py:0
+#: code:addons/car_agency/wizard/sell.py:0
+#, python-format
+msgid "New"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields.selection,name:car_agency.selection__car_rental__paid__no
+msgid "No"
+msgstr ""
+
+#. module: car_agency
+#. odoo-python
+#: code:addons/car_agency/wizard/return_wizard.py:0
+#, python-format
+msgid "No active car rental record found."
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields.selection,name:car_agency.selection__car_rental__situation__normal
+#: model:ir.model.fields.selection,name:car_agency.selection__car_situation_wizard__situation__2
+#: model:ir.model.fields.selection,name:car_agency.selection__company_car__situation__2
+#: model:ir.model.fields.selection,name:car_agency.selection__return_car__car_situation__normal
+msgid "Normal"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields,field_description:car_agency.field_car_maintenance__notes
+#: model:ir.model.fields,field_description:car_agency.field_car_model__notes
+#: model:ir.model.fields,field_description:car_agency.field_car_services__notes
+#: model:ir.model.fields,field_description:car_agency.field_company_agency__notes
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_maintenance_form
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_model_form
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_services_form
+#: model_terms:ir.ui.view,arch_db:car_agency.view_company_agency_form
+#: model_terms:ir.ui.view,arch_db:car_agency.view_company_car_form
+msgid "Notes"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields,field_description:car_agency.field_car_sale__nbr_years
+#: model:ir.model.fields,field_description:car_agency.field_car_sale_wizard__nbr_years
+msgid "Number Of Years For Installments"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields,field_description:car_agency.field_car_brand__message_needaction_counter
+#: model:ir.model.fields,field_description:car_agency.field_car_maintenance__message_needaction_counter
+#: model:ir.model.fields,field_description:car_agency.field_car_model__message_needaction_counter
+#: model:ir.model.fields,field_description:car_agency.field_car_rental__message_needaction_counter
+#: model:ir.model.fields,field_description:car_agency.field_car_sale__message_needaction_counter
+#: model:ir.model.fields,field_description:car_agency.field_company_agency__message_needaction_counter
+#: model:ir.model.fields,field_description:car_agency.field_company_car__message_needaction_counter
+msgid "Number of Actions"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields,field_description:car_agency.field_company_car__nb_photo
+msgid "Number of Car Photos"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields,field_description:car_agency.field_car_brand__message_has_error_counter
+#: model:ir.model.fields,field_description:car_agency.field_car_maintenance__message_has_error_counter
+#: model:ir.model.fields,field_description:car_agency.field_car_model__message_has_error_counter
+#: model:ir.model.fields,field_description:car_agency.field_car_rental__message_has_error_counter
+#: model:ir.model.fields,field_description:car_agency.field_car_sale__message_has_error_counter
+#: model:ir.model.fields,field_description:car_agency.field_company_agency__message_has_error_counter
+#: model:ir.model.fields,field_description:car_agency.field_company_car__message_has_error_counter
+msgid "Number of errors"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields,help:car_agency.field_car_brand__message_needaction_counter
+#: model:ir.model.fields,help:car_agency.field_car_maintenance__message_needaction_counter
+#: model:ir.model.fields,help:car_agency.field_car_model__message_needaction_counter
+#: model:ir.model.fields,help:car_agency.field_car_rental__message_needaction_counter
+#: model:ir.model.fields,help:car_agency.field_car_sale__message_needaction_counter
+#: model:ir.model.fields,help:car_agency.field_company_agency__message_needaction_counter
+#: model:ir.model.fields,help:car_agency.field_company_car__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields,help:car_agency.field_car_brand__message_has_error_counter
+#: model:ir.model.fields,help:car_agency.field_car_maintenance__message_has_error_counter
+#: model:ir.model.fields,help:car_agency.field_car_model__message_has_error_counter
+#: model:ir.model.fields,help:car_agency.field_car_rental__message_has_error_counter
+#: model:ir.model.fields,help:car_agency.field_car_sale__message_has_error_counter
+#: model:ir.model.fields,help:car_agency.field_company_agency__message_has_error_counter
+#: model:ir.model.fields,help:car_agency.field_company_car__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr ""
+
+#. module: car_agency
+#: model_terms:ir.ui.view,arch_db:car_agency.weblearns_layout
+msgid ""
+"Page :<span class=\"page\"/>/\n"
+"                    <span class=\"topage\"/>"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields,field_description:car_agency.field_car_rental__paid
+msgid "Paid"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields,field_description:car_agency.field_car_sale__pay_mode
+#: model:ir.model.fields,field_description:car_agency.field_car_sale_wizard__pay_mode
+msgid "Pay Mode"
+msgstr ""
+
+#. module: car_agency
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_sale_form
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_sale_wizard_form
+msgid "Payment"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields,field_description:car_agency.field_car_sale__payment_method
+#: model:ir.model.fields,field_description:car_agency.field_car_sale_wizard__payment_method
+msgid "Payment Method"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields,field_description:car_agency.field_car_sale__percentage_of_increase
+#: model:ir.model.fields,field_description:car_agency.field_car_sale_wizard__percentage_of_increase
+msgid "Percentage Of Increase (%)"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields,field_description:car_agency.field_car_sale__percentage_advanced
+#: model:ir.model.fields,field_description:car_agency.field_car_sale_wizard__percentage_advanced
+msgid "Percentage Of The Advanced Installment"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields,field_description:car_agency.field_car_brand__phone
+#: model:ir.model.fields,field_description:car_agency.field_company_agency__phone
+msgid "Phone"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields,field_description:car_agency.field_car_model__power
+msgid "Power"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields,field_description:car_agency.field_car_services__price
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_rental_form
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_rental_wizard_form
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_sale_form
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_sale_wizard_form
+msgid "Price"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields.selection,name:car_agency.selection__car_model__state__prototype
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_model_search
+msgid "Prototype"
+msgstr ""
+
+#. module: car_agency
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_maintenance_search
+msgid "Reason"
+msgstr ""
+
+#. module: car_agency
+#: model_terms:ir.ui.view,arch_db:car_agency.car_brand_kanban_view
+#: model_terms:ir.ui.view,arch_db:car_agency.company_agency_kanban_view
+msgid "Reference:"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields,field_description:car_agency.field_car_maintenance__registration_number
+#: model:ir.model.fields,field_description:car_agency.field_car_rental__registration_number
+#: model:ir.model.fields,field_description:car_agency.field_car_rental_wizard__registration_number
+#: model:ir.model.fields,field_description:car_agency.field_car_sale__registration_number
+#: model:ir.model.fields,field_description:car_agency.field_company_agency__registration_number
+#: model:ir.model.fields,field_description:car_agency.field_company_car__registration_number
+#: model:ir.model.fields,field_description:car_agency.field_return_car__registration_number
+msgid "Registration Number"
+msgstr ""
+
+#. module: car_agency
+#: model_terms:ir.ui.view,arch_db:car_agency.view_company_car_form
+msgid "Rent"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.actions.report,name:car_agency.report_rent
+msgid "Rent Agreement"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model,name:car_agency.model_car_rental_wizard
+msgid "Rent Car Wizard"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields,field_description:car_agency.field_company_car__rent_count
+msgid "Rent Count"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields,field_description:car_agency.field_car_rental__total
+#: model:ir.model.fields,field_description:car_agency.field_return_car__price_rent
+msgid "Rent Price"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields,field_description:car_agency.field_car_rental__rent_price
+#: model:ir.model.fields,field_description:car_agency.field_car_rental_wizard__rent_price
+msgid "Rent Price For One Day"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields,field_description:car_agency.field_company_car__rental_ids
+#: model:ir.ui.menu,name:car_agency.menu_car_rental
+msgid "Rental"
+msgstr ""
+
+#. module: car_agency
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_rental_form
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_rental_wizard_form
+msgid "Rental Days"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model,name:car_agency.model_car_rental
+msgid "Rental Records"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields.selection,name:car_agency.selection__car_rental__state__rented
+#: model:ir.model.fields.selection,name:car_agency.selection__company_car__state__rented
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_rental_search
+#: model_terms:ir.ui.view,arch_db:car_agency.view_company_car_form
+#: model_terms:ir.ui.view,arch_db:car_agency.view_company_car_search
+msgid "Rented"
+msgstr ""
+
+#. module: car_agency
+#. odoo-python
+#: code:addons/car_agency/models/car.py:0
+#, python-format
+msgid "Rents"
+msgstr ""
+
+#. module: car_agency
+#: model_terms:ir.ui.view,arch_db:car_agency.view_company_car_form
+msgid "Rents History"
+msgstr ""
+
+#. module: car_agency
+#: model_terms:ir.ui.view,arch_db:car_agency.view_company_car_form
+msgid "Repair"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model,name:car_agency.model_car_repair_wizard
+msgid "Repair Car Wizard"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields,field_description:car_agency.field_car_maintenance__repairman_id
+#: model:ir.model.fields,field_description:car_agency.field_car_repair_wizard__repairman_id
+#: model:ir.model.fields,field_description:car_agency.field_car_services__repairman_id
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_maintenance_search
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_services_search
+msgid "Repairman"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields.selection,name:car_agency.selection__company_car__state__reserved
+msgid "Reserved"
+msgstr ""
+
+#. module: car_agency
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_maintenance_form
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_rental_form
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_sale_form
+#: model_terms:ir.ui.view,arch_db:car_agency.view_company_car_form
+msgid "Reset To Draft"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields,field_description:car_agency.field_car_rental__responsible
+#: model:ir.model.fields,field_description:car_agency.field_car_rental_wizard__responsible
+#: model:ir.model.fields,field_description:car_agency.field_car_sale__responsible
+#: model:ir.model.fields,field_description:car_agency.field_car_sale_wizard__responsible
+#: model:ir.model.fields,field_description:car_agency.field_company_agency__responsible_id
+#: model:ir.model.fields,field_description:car_agency.field_company_car__responsible
+#: model:ir.model.fields,field_description:car_agency.field_return_car__responsible
+msgid "Responsible Person"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields,field_description:car_agency.field_company_car__damage_res
+msgid "Responsible of The Damage"
+msgstr ""
+
+#. module: car_agency
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_rental_form
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_return_wizard_form
+msgid "Return Information"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model,name:car_agency.model_return_car
+msgid "Return The Car"
+msgstr ""
+
+#. module: car_agency
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_rental_form
+msgid "Return The Rent"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields.selection,name:car_agency.selection__car_rental__state__returned
+msgid "Returned"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.ui.menu,name:car_agency.menu_car_sale
+msgid "Sale"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.actions.report,name:car_agency.report_sale
+msgid "Sale Agreement"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields,field_description:car_agency.field_car_sale__sale_price
+#: model:ir.model.fields,field_description:car_agency.field_car_sale_wizard__sale_price
+msgid "Sale Price"
+msgstr ""
+
+#. module: car_agency
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_rental_wizard_form
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_repair_wizard_form
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_return_wizard_form
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_sale_wizard_form
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_situation_wizard_form
+msgid "Save"
+msgstr ""
+
+#. module: car_agency
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_return_wizard_form
+msgid "Save and Create Invoice"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields,field_description:car_agency.field_car_model__seats
+msgid "Seats Number"
+msgstr ""
+
+#. module: car_agency
+#: model_terms:ir.ui.view,arch_db:car_agency.view_company_car_form
+msgid "Sell"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model,name:car_agency.model_car_sale_wizard
+msgid "Sell Car Wizard"
+msgstr ""
+
+#. module: car_agency
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_services_form
+msgid "Service"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields,field_description:car_agency.field_car_services__mode
+msgid "Service Mode"
+msgstr ""
+
+#. module: car_agency
+#. odoo-python
+#: code:addons/car_agency/models/car.py:0
+#: model:ir.model.fields,field_description:car_agency.field_car_damage__services_ids
+#: model:ir.ui.menu,name:car_agency.menu_car_services
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_damage_search
+#, python-format
+msgid "Services"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields,field_description:car_agency.field_company_car__services_count
+msgid "Services Count"
+msgstr ""
+
+#. module: car_agency
+#: model_terms:ir.ui.view,arch_db:car_agency.view_company_car_form
+msgid "Services History"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields,field_description:car_agency.field_car_maintenance__services_ids
+#: model:ir.model.fields,field_description:car_agency.field_car_rental__services_ids
+#: model:ir.model.fields,field_description:car_agency.field_car_repair_wizard__services_ids
+#: model:ir.model.fields,field_description:car_agency.field_company_car__services_ids
+#: model:ir.model.fields,field_description:car_agency.field_return_car__services_ids
+msgid "Services Needed"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.actions.act_window,name:car_agency.car_agency_config_settings_action
+#: model:ir.ui.menu,name:car_agency.car_agency_config_settings_menu
+msgid "Settings"
+msgstr ""
+
+#. module: car_agency
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_rental_form
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_sale_form
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_sale_wizard_form
+msgid "Signe Contract"
+msgstr ""
+
+#. module: car_agency
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_rental_form
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_sale_form
+msgid "Signe Contract and Print"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields.selection,name:car_agency.selection__car_maintenance__reason__situation
+#: model:ir.model.fields.selection,name:car_agency.selection__car_repair_wizard__reason__situation
+msgid "Situation"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields.selection,name:car_agency.selection__company_car__state__sold
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_sale_form
+#: model_terms:ir.ui.view,arch_db:car_agency.view_company_car_form
+#: model_terms:ir.ui.view,arch_db:car_agency.view_company_car_search
+msgid "Sold"
+msgstr ""
+
+#. module: car_agency
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_maintenance_form
+msgid "Start Car Repair"
+msgstr ""
+
+#. module: car_agency
+#: model_terms:ir.ui.view,arch_db:car_agency.view_company_agency_search
+#: model_terms:ir.ui.view,arch_db:car_agency.view_company_car_search
+msgid "State"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields,field_description:car_agency.field_car_brand__state
+#: model:ir.model.fields,field_description:car_agency.field_car_maintenance__state
+#: model:ir.model.fields,field_description:car_agency.field_car_model__state
+#: model:ir.model.fields,field_description:car_agency.field_car_rental__state
+#: model:ir.model.fields,field_description:car_agency.field_car_sale__state
+#: model:ir.model.fields,field_description:car_agency.field_company_agency__state
+#: model:ir.model.fields,field_description:car_agency.field_company_car__state
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_maintenance_search
+msgid "Status"
+msgstr ""
+
+#. module: car_agency
+#: model_terms:ir.ui.view,arch_db:car_agency.company_car_kanban_view
+msgid "Status:"
+msgstr ""
+
+#. module: car_agency
+#: model_terms:ir.ui.view,arch_db:car_agency.view_company_car_form
+msgid "TN"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields,field_description:car_agency.field_car_rental__notes
+#: model:ir.model.fields,field_description:car_agency.field_car_rental_wizard__notes
+#: model:ir.model.fields,field_description:car_agency.field_car_repair_wizard__notes
+#: model:ir.model.fields,field_description:car_agency.field_car_sale__notes
+#: model:ir.model.fields,field_description:car_agency.field_car_sale_wizard__notes
+#: model:ir.model.fields,field_description:car_agency.field_company_car__notes
+#: model:ir.model.fields,field_description:car_agency.field_res_config_settings__car_agency_notes
+#: model:ir.model.fields,field_description:car_agency.field_return_car__notes
+#: model_terms:ir.ui.view,arch_db:car_agency.res_config_settings_view_form_car
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_rental_form
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_rental_wizard_form
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_repair_wizard_form
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_return_wizard_form
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_sale_form
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_sale_wizard_form
+msgid "Terms and Conditions"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields,field_description:car_agency.field_return_car__agency_id
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_rental_form
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_rental_wizard_form
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_return_wizard_form
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_sale_form
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_sale_wizard_form
+#: model_terms:ir.ui.view,arch_db:car_agency.view_company_agency_form
+#: model_terms:ir.ui.view,arch_db:car_agency.view_company_car_form
+msgid "The Agency"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields,field_description:car_agency.field_car_maintenance__agency_logo
+#: model:ir.model.fields,field_description:car_agency.field_car_rental__agency_image
+#: model:ir.model.fields,field_description:car_agency.field_car_sale__agency_image
+#: model:ir.model.fields,field_description:car_agency.field_company_agency__logo
+#: model:ir.model.fields,field_description:car_agency.field_company_car__agency_logo
+msgid "The Agency Logo"
+msgstr ""
+
+#. module: car_agency
+#: model_terms:ir.ui.view,arch_db:car_agency.company_car_kanban_view
+msgid "The Agency Owner:"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields,field_description:car_agency.field_company_car__ph2
+#: model_terms:ir.ui.view,arch_db:car_agency.view_company_car_form
+msgid "The Back Side"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields,field_description:car_agency.field_car_brand__brand_image
+#: model:ir.model.fields,field_description:car_agency.field_car_maintenance__brand_image
+#: model:ir.model.fields,field_description:car_agency.field_car_model__brand_id
+#: model:ir.model.fields,field_description:car_agency.field_car_model__brand_image
+#: model:ir.model.fields,field_description:car_agency.field_company_car__brand_image
+msgid "The Brand"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields,field_description:car_agency.field_car_rental__brand_image
+#: model:ir.model.fields,field_description:car_agency.field_car_sale__brand_image
+#: model:ir.model.fields,field_description:car_agency.field_car_sale_wizard__brand_image
+msgid "The Brand Logo"
+msgstr ""
+
+#. module: car_agency
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_maintenance_form
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_rental_form
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_rental_wizard_form
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_return_wizard_form
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_sale_form
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_sale_wizard_form
+#: model_terms:ir.ui.view,arch_db:car_agency.view_company_car_form
+msgid "The Car"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields,field_description:car_agency.field_car_rental__client_id
+#: model:ir.model.fields,field_description:car_agency.field_car_rental_wizard__client_id
+#: model:ir.model.fields,field_description:car_agency.field_car_sale__client_id
+#: model:ir.model.fields,field_description:car_agency.field_car_sale_wizard__client_id
+#: model:ir.model.fields,field_description:car_agency.field_return_car__client_id
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_rental_form
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_rental_wizard_form
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_return_wizard_form
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_sale_form
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_sale_wizard_form
+msgid "The Client"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields,field_description:car_agency.field_car_rental__client_image
+#: model:ir.model.fields,field_description:car_agency.field_car_sale__client_image
+msgid "The Client Image"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields,field_description:car_agency.field_car_services__damage_id
+msgid "The Damage"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields,field_description:car_agency.field_car_rental__costs
+msgid "The Damage Costs"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields,field_description:car_agency.field_company_car__ph1
+#: model_terms:ir.ui.view,arch_db:car_agency.view_company_car_form
+msgid "The Front Side"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields,field_description:car_agency.field_company_car__ph3
+#: model_terms:ir.ui.view,arch_db:car_agency.view_company_car_form
+msgid "The Left Side"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields,field_description:car_agency.field_company_car__model_id
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_model_form
+msgid "The Model"
+msgstr ""
+
+#. module: car_agency
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_situation_wizard_form
+msgid "The New Car Situation"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields,field_description:car_agency.field_car_maintenance__agency_id
+#: model:ir.model.fields,field_description:car_agency.field_company_car__agency_id
+msgid "The Owner Agency"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields,field_description:car_agency.field_car_maintenance__reason
+#: model:ir.model.fields,field_description:car_agency.field_car_repair_wizard__car_situation
+#: model:ir.model.fields,field_description:car_agency.field_car_repair_wizard__reason
+msgid "The Reason"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields,field_description:car_agency.field_company_car__ph4
+#: model_terms:ir.ui.view,arch_db:car_agency.view_company_car_form
+msgid "The Right Side"
+msgstr ""
+
+#. module: car_agency
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_maintenance_form
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_repair_wizard_form
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_services_form
+msgid "The Worker"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields,field_description:car_agency.field_car_maintenance__email
+#: model:ir.model.fields,field_description:car_agency.field_car_repair_wizard__email
+#: model:ir.model.fields,field_description:car_agency.field_car_services__email
+msgid "The Worker Email"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields,field_description:car_agency.field_car_maintenance__phone
+#: model:ir.model.fields,field_description:car_agency.field_car_repair_wizard__phone
+#: model:ir.model.fields,field_description:car_agency.field_car_services__phone
+msgid "The Worker Phone"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields,field_description:car_agency.field_car_rental__agency_id
+#: model:ir.model.fields,field_description:car_agency.field_car_rental_wizard__agency_id
+#: model:ir.model.fields,field_description:car_agency.field_car_sale__agency_id
+#: model:ir.model.fields,field_description:car_agency.field_car_sale_wizard__agency_id
+msgid "The agency"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields,field_description:car_agency.field_car_maintenance__car_id
+msgid "The car"
+msgstr ""
+
+#. module: car_agency
+#. odoo-python
+#: code:addons/car_agency/wizard/return_wizard.py:0
+#, python-format
+msgid "The costs must be different to zero."
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields,field_description:car_agency.field_car_rental__nb_day
+#: model:ir.model.fields,field_description:car_agency.field_car_rental_wizard__nb_day
+#: model:ir.model.fields,field_description:car_agency.field_car_repair_wizard__nb_day
+msgid "The number Of Rental Days "
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields,field_description:car_agency.field_car_maintenance__nb_day
+msgid "The number Of Repair Days "
+msgstr ""
+
+#. module: car_agency
+#. odoo-python
+#: code:addons/car_agency/models/rental.py:0
+#: code:addons/car_agency/wizard/rent_wizard.py:0
+#, python-format
+msgid "The start date must be before the end date."
+msgstr ""
+
+#. module: car_agency
+#: model_terms:ir.ui.view,arch_db:car_agency.report_rent_template
+msgid ""
+"This rental contract is subject to the terms and conditions agreed upon by the client\n"
+"                                and the agency. Please ensure that you have read and understood all the clauses before\n"
+"                                signing. Any damage to the car must be reported immediately to the agency. The client is\n"
+"                                responsible for maintaining the car in good condition throughout the rental period."
+msgstr ""
+
+#. module: car_agency
+#: model_terms:ir.ui.view,arch_db:car_agency.report_sale_template
+msgid ""
+"This sale contract is subject to the terms and conditions agreed upon by the client\n"
+"                                and the agency. Please ensure that you have read and understood all the clauses before\n"
+"                                signing. Any damage to the car must be reported immediately to the agency. The client is\n"
+"                                responsible for maintaining the car in good condition until the transfer of ownership is\n"
+"                                complete."
+msgstr ""
+
+#. module: car_agency
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_return_wizard_form
+msgid "Total"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields,field_description:car_agency.field_car_rental__total_return
+#: model:ir.model.fields,field_description:car_agency.field_car_rental_wizard__total
+#: model:ir.model.fields,field_description:car_agency.field_return_car__total
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_rental_wizard_form
+msgid "Total Price"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields,field_description:car_agency.field_car_model__transmission
+msgid "Transmission"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.ui.menu,name:car_agency.menu_car_damage
+msgid "Types"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields.selection,name:car_agency.selection__car_brand__state__review
+msgid "Under Review"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields.selection,name:car_agency.selection__car_situation_wizard__situation__4
+#: model:ir.model.fields.selection,name:car_agency.selection__company_car__situation__4
+msgid "Very High"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields,field_description:car_agency.field_car_brand__website
+#: model:ir.model.fields,field_description:car_agency.field_company_agency__website
+msgid "Website"
+msgstr ""
+
+#. module: car_agency
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_rental_form
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_rental_wizard_form
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_repair_wizard_form
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_return_wizard_form
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_sale_form
+#: model_terms:ir.ui.view,arch_db:car_agency.view_car_sale_wizard_form
+msgid "Write here all other information relative to this contract"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields.selection,name:car_agency.selection__car_rental__paid__yes
+msgid "Yes"
+msgstr ""
+
+#. module: car_agency
+#. odoo-python
+#: code:addons/car_agency/models/rental.py:0
+#, python-format
+msgid "You can not rent this car ,the situation is very low."
+msgstr ""
+
+#. module: car_agency
+#. odoo-python
+#: code:addons/car_agency/wizard/rent_wizard.py:0
+#: code:addons/car_agency/wizard/sell.py:0
+#: code:addons/car_agency/wizard/sell.py:0
+#, python-format
+msgid "You cannot rent this car the situation is very low!"
+msgstr ""
+
+#. module: car_agency
+#. odoo-python
+#: code:addons/car_agency/models/rental.py:0
+#: code:addons/car_agency/models/rental.py:0
+#: code:addons/car_agency/wizard/rent_wizard.py:0
+#: code:addons/car_agency/wizard/rent_wizard.py:0
+#, python-format
+msgid "You cannot reserve this car in this period as it is already reserved."
+msgstr ""
+
+#. module: car_agency
+#: model_terms:ir.ui.view,arch_db:car_agency.report_rent_template
+#: model_terms:ir.ui.view,arch_db:car_agency.report_sale_template
+msgid "______________________________"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model,name:car_agency.model_company_agency
+msgid "agency Records"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model,name:car_agency.model_car_sale
+msgid "car Records"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields,field_description:car_agency.field_car_rental__company_id
+#: model:ir.model.fields,field_description:car_agency.field_car_rental_wizard__company_id
+#: model:ir.model.fields,field_description:car_agency.field_car_sale__company_id
+#: model:ir.model.fields,field_description:car_agency.field_car_sale_wizard__company_id
+#: model:ir.model.fields,field_description:car_agency.field_company_car__company_id
+msgid "company"
+msgstr ""
+
+#. module: car_agency
+#: model_terms:ir.ui.view,arch_db:car_agency.weblearns_layout
+msgid "img"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model,name:car_agency.model_car_model
+msgid "model Records"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields,field_description:car_agency.field_company_car__reservation_count
+msgid "reservation Count"
+msgstr ""
+
+#. module: car_agency
+#. odoo-python
+#: code:addons/car_agency/models/car.py:0
+#: model_terms:ir.ui.view,arch_db:car_agency.view_company_car_form
+#, python-format
+msgid "reservations"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields,field_description:car_agency.field_car_situation_wizard__situation
+#: model:ir.model.fields,field_description:car_agency.field_company_car__situation
+msgid "situation"
+msgstr ""
+
+#. module: car_agency
+#: model:ir.model.fields.selection,name:car_agency.selection__car_situation_wizard__situation__0
+#: model:ir.model.fields.selection,name:car_agency.selection__company_car__situation__0
+msgid "very Low"
+msgstr ""
